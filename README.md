@@ -23,19 +23,13 @@ Simple ASP.NET Core Web API for Product Management with JWT Authentication, Logg
 
 ### Steps
 
-1. Clone the repository
-git clone <https://github.com/syahferiaswan25/ProductApiTest.git>
-cd ProductApi
+1. git clone <https://github.com/syahferiaswan25/ProductApiTest.git>
+- cd ProductApi
 
-2. Restore dependencies
-dotnet restore
+2. dotnet restore
 
-3. Build project
-dotnet build
+3. dotnet build
 
-4. Run project
-dotnet run --project ProductApi
+4. dotnet run --project ProductApi
 
-5. Access frontend
-Open browser and go to:
-https://localhost:5001/ProductView/Index
+5. https://localhost:5001/ProductView/Index
