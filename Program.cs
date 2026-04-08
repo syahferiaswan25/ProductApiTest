@@ -7,6 +7,7 @@ using System.Text;
 using Microsoft.OpenApi.Models;
 using Serilog;
 using ProductApi.Middleware;
+using Microsoft.AspNetCore.HttpOverrides;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -89,6 +90,12 @@ builder.Services.AddAuthentication(options =>
 builder.Services.AddMemoryCache();
 
 var app = builder.Build();
+
+// =================== ForwardedHeaders ===========
+app.UseForwardedHeaders(new ForwardedHeadersOptions
+{
+    ForwardedHeaders = ForwardedHeaders.XForwardedFor | ForwardedHeaders.XForwardedProto
+});
 
 // ================== ENSURE DB ==================
 using (var scope = app.Services.CreateScope())
