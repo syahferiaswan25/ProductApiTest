@@ -1,0 +1,7 @@
+2026-04-09 00:05:29.740 +07:00 [INF] User profile is available. Using '/Users/amfsdigital/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2026-04-09 00:05:29.783 +07:00 [WRN] The WebRootPath was not found: /Users/amfsdigital/product-assessment/ProductApi/wwwroot. Static files may be unavailable.
+2026-04-09 00:05:29.800 +07:00 [INF] Now listening on: http://localhost:5035
+2026-04-09 00:05:29.801 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-04-09 00:05:29.801 +07:00 [INF] Hosting environment: Development
+2026-04-09 00:05:29.801 +07:00 [INF] Content root path: /Users/amfsdigital/product-assessment/ProductApi
+2026-04-09 00:05:34.763 +07:00 [INF] Application is shutting down...
