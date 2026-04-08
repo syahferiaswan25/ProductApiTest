@@ -9,9 +9,9 @@ public class AuthViewController : Controller
     private readonly HttpClient _httpClient;
 
     public AuthViewController(IHttpClientFactory httpClientFactory)
-{
-    _httpClient = httpClientFactory.CreateClient();
-}
+    {
+        _httpClient = httpClientFactory.CreateClient();
+    }
 
     public IActionResult Login()
     {
@@ -33,15 +33,15 @@ public class AuthViewController : Controller
             "application/json"
         );
 
-        var url = $"{Request.Scheme}://{Request.Host}/api/auth/login";
-
-        var response = await _httpClient.PostAsync(url, content);
+        //BaseAddress + relative URL
+        _httpClient.BaseAddress = new Uri($"{Request.Scheme}://{Request.Host}");
+        var response = await _httpClient.PostAsync("/api/auth/login", content);
 
         if (!response.IsSuccessStatusCode)
         {
             var error = await response.Content.ReadAsStringAsync();
-    ViewBag.Error = $"Login failed: {error}";
-    return View();
+            ViewBag.Error = $"Login failed: {error}";
+            return View();
         }
 
         var json = await response.Content.ReadAsStringAsync();
@@ -53,52 +53,58 @@ public class AuthViewController : Controller
                 PropertyNameCaseInsensitive = true
             });
 
-        Response.Cookies.Append("jwt", tokenObj.Token);
+        //HTTPS (Railway)
+        Response.Cookies.Append("jwt", tokenObj.Token, new CookieOptions
+        {
+            HttpOnly = true,
+            Secure = true,
+            SameSite = SameSiteMode.None
+        });
 
         return RedirectToAction("Index", "ProductView");
     }
 
     // GET: Register
-public IActionResult Register()
-{
-    return View();
-}
-
-// POST: Register
-[HttpPost]
-public async Task<IActionResult> Register(string username, string password)
-{
-    var request = new
+    public IActionResult Register()
     {
-        Username = username,
-        Password = password
-    };
-
-    var content = new StringContent(
-        JsonSerializer.Serialize(request),
-        Encoding.UTF8,
-        "application/json"
-    );
-
-    var url = $"{Request.Scheme}://{Request.Host}/api/auth/register";
-
-    var response = await _httpClient.PostAsync(url, content);
-
-    if (!response.IsSuccessStatusCode)
-    {
-        var error = await response.Content.ReadAsStringAsync();
-    ViewBag.Error = $"Register failed: {error}";
-    return View();
+        return View();
     }
 
-    return RedirectToAction("Login");
-}
+    // POST: Register
+    [HttpPost]
+    public async Task<IActionResult> Register(string username, string password)
+    {
+        var request = new
+        {
+            Username = username,
+            Password = password
+        };
 
-public IActionResult Logout()
-{
-    Response.Cookies.Delete("jwt");
-    return RedirectToAction("Login");
-}
+        var content = new StringContent(
+            JsonSerializer.Serialize(request),
+            Encoding.UTF8,
+            "application/json"
+        );
+
+        //BaseAddress + relative URL
+        _httpClient.BaseAddress = new Uri($"{Request.Scheme}://{Request.Host}");
+        var response = await _httpClient.PostAsync("/api/auth/register", content);
+
+        if (!response.IsSuccessStatusCode)
+        {
+            var error = await response.Content.ReadAsStringAsync();
+            ViewBag.Error = $"Register failed: {error}";
+            return View();
+        }
+
+        return RedirectToAction("Login");
+    }
+
+    public IActionResult Logout()
+    {
+        Response.Cookies.Delete("jwt");
+        return RedirectToAction("Login");
+    }
 }
 
 public class TokenResponse
