@@ -1,5 +1,7 @@
 using System.ComponentModel.DataAnnotations;
 
+namespace ProductApi.Models;
+
 public class User
 {
     public int Id { get; set; }

@@ -23,29 +23,35 @@ public class AuthController : ControllerBase
     }
 
     [HttpPost("register")]
-    public async Task<IActionResult> Register(User user)
+public async Task<IActionResult> Register(RegisterRequest request)
+{
+    var user = new User
     {
-        await _context.Users.AddAsync(user);
-        await _context.SaveChangesAsync();
+        Username = request.Username,
+        Password = request.Password
+    };
 
-        return Ok(user);
-    }
+    await _context.Users.AddAsync(user);
+    await _context.SaveChangesAsync();
+
+    return Ok(user);
+}   
 
     [HttpPost("login")]
-    public async Task<IActionResult> Login(User login)
-    {
-        var user = await _context.Users
-            .FirstOrDefaultAsync(x =>
-                x.Username == login.Username &&
-                x.Password == login.Password);
+public async Task<IActionResult> Login(LoginRequest request)
+{
+    var user = await _context.Users
+        .FirstOrDefaultAsync(x =>
+            x.Username.ToLower() == request.Username.ToLower() &&
+            x.Password == request.Password);
 
-        if (user == null)
-            return Unauthorized();
+    if (user == null)
+        return Unauthorized("Invalid username or password");
 
-        var token = GenerateToken(user);
+    var token = GenerateToken(user);
 
-        return Ok(new { token });
-    }
+    return Ok(new { token });
+}
 
     private string GenerateToken(User user)
     {

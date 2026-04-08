@@ -1,0 +1,46 @@
+@model IEnumerable<ProductApi.Models.Product>
+
+<h2>Product List</h2>
+
+<div class="mb-3">
+    <a href="/ProductView/Create" class="btn btn-primary">
+        Add Product
+    </a>
+
+    <a href="/AuthView/Logout" class="btn btn-danger">
+        Logout
+    </a>
+</div>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Price</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Name</td>
+                <td>@item.Description</td>
+                <td>@item.Price</td>
+                <td>
+                    <a href="/ProductView/Edit/@item.Id"
+                       class="btn btn-warning btn-sm">
+                        Edit
+                    </a>
+
+                    <a href="/ProductView/Delete/@item.Id"
+                       class="btn btn-danger btn-sm">
+                        Delete
+                    </a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

@@ -227,6 +227,7 @@
 /Users/amfsdigital/product-assessment/ProductApi/obj/Debug/net8.0/ProductApi.csproj.CoreCompileInputs.cache
 /Users/amfsdigital/product-assessment/ProductApi/obj/Debug/net8.0/ProductApi.MvcApplicationPartsAssemblyInfo.cs
 /Users/amfsdigital/product-assessment/ProductApi/obj/Debug/net8.0/ProductApi.MvcApplicationPartsAssemblyInfo.cache
+/Users/amfsdigital/product-assessment/ProductApi/obj/Debug/net8.0/ProductApi.sourcelink.json
 /Users/amfsdigital/product-assessment/ProductApi/obj/Debug/net8.0/staticwebassets.build.json
 /Users/amfsdigital/product-assessment/ProductApi/obj/Debug/net8.0/staticwebassets.development.json
 /Users/amfsdigital/product-assessment/ProductApi/obj/Debug/net8.0/staticwebassets/msbuild.ProductApi.Microsoft.AspNetCore.StaticWebAssets.props
@@ -241,3 +242,5 @@
 /Users/amfsdigital/product-assessment/ProductApi/obj/Debug/net8.0/ProductApi.pdb
 /Users/amfsdigital/product-assessment/ProductApi/obj/Debug/net8.0/ProductApi.genruntimeconfig.cache
 /Users/amfsdigital/product-assessment/ProductApi/obj/Debug/net8.0/ref/ProductApi.dll
+/Users/amfsdigital/product-assessment/ProductApi/obj/Debug/net8.0/ProductApi.RazorAssemblyInfo.cache
+/Users/amfsdigital/product-assessment/ProductApi/obj/Debug/net8.0/ProductApi.RazorAssemblyInfo.cs

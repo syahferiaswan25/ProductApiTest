@@ -32,4 +32,4 @@ Simple ASP.NET Core Web API for Product Management with JWT Authentication, Logg
 
 4. dotnet run --project ProductApi
 
-5. https://localhost:5001/ProductView/Index
+5. http://localhost:{port}
