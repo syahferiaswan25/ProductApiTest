@@ -428,3 +428,70 @@ RETURNING "Id";
 2026-04-09 01:18:14.868 +07:00 [INF] Executed endpoint 'ProductApi.Controllers.AuthViewController.Login (ProductApi)'
 2026-04-09 01:18:14.868 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:8080/ - 200 null text/html; charset=utf-8 0.5707ms
 2026-04-09 01:18:18.001 +07:00 [INF] Application is shutting down...
+2026-04-09 01:24:54.775 +07:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "type" = 'table' AND "rootpage" IS NOT NULL;
+2026-04-09 01:24:54.848 +07:00 [INF] User profile is available. Using '/Users/amfsdigital/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2026-04-09 01:24:54.873 +07:00 [WRN] The WebRootPath was not found: /Users/amfsdigital/product-assessment/ProductApi/wwwroot. Static files may be unavailable.
+2026-04-09 01:24:54.889 +07:00 [INF] Now listening on: http://0.0.0.0:8080
+2026-04-09 01:24:54.890 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-04-09 01:24:54.891 +07:00 [INF] Hosting environment: Development
+2026-04-09 01:24:54.891 +07:00 [INF] Content root path: /Users/amfsdigital/product-assessment/ProductApi
+2026-04-09 01:25:01.345 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:8080/ - null null
+2026-04-09 01:25:01.380 +07:00 [INF] Executing endpoint 'ProductApi.Controllers.AuthViewController.Login (ProductApi)'
+2026-04-09 01:25:01.388 +07:00 [INF] Route matched with {action = "Login", controller = "AuthView"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Login() on controller ProductApi.Controllers.AuthViewController (ProductApi).
+2026-04-09 01:25:01.401 +07:00 [INF] Executing ViewResult, running view Login.
+2026-04-09 01:25:01.439 +07:00 [INF] Executed ViewResult - view Login executed in 40.4276ms.
+2026-04-09 01:25:01.440 +07:00 [INF] Executed action ProductApi.Controllers.AuthViewController.Login (ProductApi) in 51.7567ms
+2026-04-09 01:25:01.440 +07:00 [INF] Executed endpoint 'ProductApi.Controllers.AuthViewController.Login (ProductApi)'
+2026-04-09 01:25:01.442 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:8080/ - 200 null text/html; charset=utf-8 97.5182ms
+2026-04-09 01:25:02.917 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:8080/AuthView/Register - null null
+2026-04-09 01:25:02.921 +07:00 [INF] Executing endpoint 'ProductApi.Controllers.AuthViewController.Register (ProductApi)'
+2026-04-09 01:25:02.923 +07:00 [INF] Route matched with {action = "Register", controller = "AuthView"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Register() on controller ProductApi.Controllers.AuthViewController (ProductApi).
+2026-04-09 01:25:02.925 +07:00 [INF] Executing ViewResult, running view Register.
+2026-04-09 01:25:02.933 +07:00 [INF] Executed ViewResult - view Register executed in 9.0978ms.
+2026-04-09 01:25:02.933 +07:00 [INF] Executed action ProductApi.Controllers.AuthViewController.Register (ProductApi) in 9.7131ms
+2026-04-09 01:25:02.934 +07:00 [INF] Executed endpoint 'ProductApi.Controllers.AuthViewController.Register (ProductApi)'
+2026-04-09 01:25:02.934 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:8080/AuthView/Register - 200 null text/html; charset=utf-8 17.1725ms
+2026-04-09 01:25:06.588 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:8080/AuthView/Login - null null
+2026-04-09 01:25:06.592 +07:00 [INF] Executing endpoint 'ProductApi.Controllers.AuthViewController.Login (ProductApi)'
+2026-04-09 01:25:06.593 +07:00 [INF] Route matched with {action = "Login", controller = "AuthView"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Login() on controller ProductApi.Controllers.AuthViewController (ProductApi).
+2026-04-09 01:25:06.593 +07:00 [INF] Executing ViewResult, running view Login.
+2026-04-09 01:25:06.594 +07:00 [INF] Executed ViewResult - view Login executed in 1.2723ms.
+2026-04-09 01:25:06.596 +07:00 [INF] Executed action ProductApi.Controllers.AuthViewController.Login (ProductApi) in 2.6592ms
+2026-04-09 01:25:06.596 +07:00 [INF] Executed endpoint 'ProductApi.Controllers.AuthViewController.Login (ProductApi)'
+2026-04-09 01:25:06.596 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:8080/AuthView/Login - 200 null text/html; charset=utf-8 7.9999ms
+2026-04-09 01:25:09.631 +07:00 [INF] Request starting HTTP/1.1 POST http://localhost:8080/AuthView/Login - application/x-www-form-urlencoded 208
+2026-04-09 01:25:09.633 +07:00 [INF] Executing endpoint 'ProductApi.Controllers.AuthViewController.Login (ProductApi)'
+2026-04-09 01:25:09.647 +07:00 [INF] Route matched with {action = "Login", controller = "AuthView"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(System.String, System.String) on controller ProductApi.Controllers.AuthViewController (ProductApi).
+2026-04-09 01:25:09.701 +07:00 [INF] Start processing HTTP request POST http://localhost:8080/api/auth/login
+2026-04-09 01:25:09.702 +07:00 [INF] Sending HTTP request POST http://localhost:8080/api/auth/login
+2026-04-09 01:25:09.713 +07:00 [INF] Request starting HTTP/1.1 POST http://localhost:8080/api/auth/login - application/json; charset=utf-8 35
+2026-04-09 01:25:09.713 +07:00 [INF] Executing endpoint 'ProductApi.Controllers.AuthController.Login (ProductApi)'
+2026-04-09 01:25:09.716 +07:00 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(ProductApi.Models.LoginRequest) on controller ProductApi.Controllers.AuthController (ProductApi).
+2026-04-09 01:25:09.810 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[@__ToLower_0='?' (Size = 3), @__request_Password_1='?' (Size = 3)], CommandType='"Text"', CommandTimeout='30']
+SELECT "u"."Id", "u"."Password", "u"."Username"
+FROM "Users" AS "u"
+WHERE lower("u"."Username") = @__ToLower_0 AND "u"."Password" = @__request_Password_1
+LIMIT 1
+2026-04-09 01:25:09.828 +07:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType0`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-04-09 01:25:09.831 +07:00 [INF] Executed action ProductApi.Controllers.AuthController.Login (ProductApi) in 115.0257ms
+2026-04-09 01:25:09.831 +07:00 [INF] Executed endpoint 'ProductApi.Controllers.AuthController.Login (ProductApi)'
+2026-04-09 01:25:09.832 +07:00 [INF] Request finished HTTP/1.1 POST http://localhost:8080/api/auth/login - 200 null application/json; charset=utf-8 118.7642ms
+2026-04-09 01:25:09.832 +07:00 [INF] Received HTTP response headers after 129.0361ms - 200
+2026-04-09 01:25:09.832 +07:00 [INF] End processing HTTP request after 133.144ms - 200
+2026-04-09 01:25:09.843 +07:00 [INF] Executing RedirectResult, redirecting to /ProductView/Index.
+2026-04-09 01:25:09.843 +07:00 [INF] Executed action ProductApi.Controllers.AuthViewController.Login (ProductApi) in 196.1964ms
+2026-04-09 01:25:09.843 +07:00 [INF] Executed endpoint 'ProductApi.Controllers.AuthViewController.Login (ProductApi)'
+2026-04-09 01:25:09.844 +07:00 [INF] Request finished HTTP/1.1 POST http://localhost:8080/AuthView/Login - 302 0 null 213.0483ms
+2026-04-09 01:25:09.846 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:8080/ProductView/Index - null null
+2026-04-09 01:25:09.846 +07:00 [INF] Executing endpoint 'ProductApi.Controllers.ProductViewController.Index (ProductApi)'
+2026-04-09 01:25:09.847 +07:00 [INF] Route matched with {action = "Index", controller = "ProductView"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller ProductApi.Controllers.ProductViewController (ProductApi).
+2026-04-09 01:25:09.861 +07:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "p"."Id", "p"."CreatedAt", "p"."Description", "p"."Name", "p"."Price"
+FROM "Products" AS "p"
+2026-04-09 01:25:09.866 +07:00 [INF] Executing ViewResult, running view Index.
+2026-04-09 01:25:09.867 +07:00 [INF] Executed ViewResult - view Index executed in 1.22ms.
+2026-04-09 01:25:09.867 +07:00 [INF] Executed action ProductApi.Controllers.ProductViewController.Index (ProductApi) in 20.5468ms
+2026-04-09 01:25:09.867 +07:00 [INF] Executed endpoint 'ProductApi.Controllers.ProductViewController.Index (ProductApi)'
+2026-04-09 01:25:09.867 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:8080/ProductView/Index - 200 null text/html; charset=utf-8 21.8205ms
+2026-04-09 01:25:13.059 +07:00 [INF] Application is shutting down...
