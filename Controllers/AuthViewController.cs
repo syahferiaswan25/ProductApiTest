@@ -39,8 +39,9 @@ public class AuthViewController : Controller
 
         if (!response.IsSuccessStatusCode)
         {
-            ViewBag.Error = "Login failed";
-            return View();
+            var error = await response.Content.ReadAsStringAsync();
+    ViewBag.Error = $"Login failed: {error}";
+    return View();
         }
 
         var json = await response.Content.ReadAsStringAsync();
@@ -85,8 +86,9 @@ public async Task<IActionResult> Register(string username, string password)
 
     if (!response.IsSuccessStatusCode)
     {
-        ViewBag.Error = "Register failed";
-        return View();
+        var error = await response.Content.ReadAsStringAsync();
+    ViewBag.Error = $"Register failed: {error}";
+    return View();
     }
 
     return RedirectToAction("Login");
