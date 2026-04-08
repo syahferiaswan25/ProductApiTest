@@ -8,10 +8,10 @@ public class AuthViewController : Controller
 {
     private readonly HttpClient _httpClient;
 
-    public AuthViewController()
-    {
-        _httpClient = new HttpClient();
-    }
+    public AuthViewController(IHttpClientFactory httpClientFactory)
+{
+    _httpClient = httpClientFactory.CreateClient();
+}
 
     public IActionResult Login()
     {

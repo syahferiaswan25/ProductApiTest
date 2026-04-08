@@ -10,6 +10,7 @@ using ProductApi.Middleware;
 
 var builder = WebApplication.CreateBuilder(args);
 
+// ================== LOGGING ==================
 Log.Logger = new LoggerConfiguration()
     .WriteTo.Console()
     .WriteTo.File("logs/log.txt", rollingInterval: RollingInterval.Day)
@@ -17,11 +18,13 @@ Log.Logger = new LoggerConfiguration()
 
 builder.Host.UseSerilog();
 
-// Add services to the container
+// ================== SERVICES ==================
 builder.Services.AddControllers();
 builder.Services.AddControllersWithViews();
 builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddHttpClient();
 
+// Swagger
 builder.Services.AddSwaggerGen(options =>
 {
     options.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
@@ -50,10 +53,17 @@ builder.Services.AddSwaggerGen(options =>
     });
 });
 
+// ================== DATABASE ==================
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseSqlite("Data Source=/tmp/products.db"));
 
-builder.Services.AddScoped<IProductRepository, ProductRepository>();    
+// ================== REPOSITORY ==================
+builder.Services.AddScoped<IProductRepository, ProductRepository>();
+
+// ================== JWT CONFIG ==================
+var jwtKey = builder.Configuration["Jwt:Key"] ?? "THIS_IS_SUPER_SECRET_KEY_123456789";
+var jwtIssuer = builder.Configuration["Jwt:Issuer"] ?? "ProductApi";
+var jwtAudience = builder.Configuration["Jwt:Audience"] ?? "ProductApiUsers";
 
 builder.Services.AddAuthentication(options =>
 {
@@ -69,28 +79,29 @@ builder.Services.AddAuthentication(options =>
         ValidateLifetime = true,
         ValidateIssuerSigningKey = true,
 
-        ValidIssuer = builder.Configuration["Jwt:Issuer"],
-        ValidAudience = builder.Configuration["Jwt:Audience"],
+        ValidIssuer = jwtIssuer,
+        ValidAudience = jwtAudience,
         IssuerSigningKey = new SymmetricSecurityKey(
-            Encoding.UTF8.GetBytes(builder.Configuration["Jwt:Key"]))
+            Encoding.UTF8.GetBytes(jwtKey))
     };
 });
 
 builder.Services.AddMemoryCache();
+
 var app = builder.Build();
 
-// Ensure DB created
+// ================== ENSURE DB ==================
 using (var scope = app.Services.CreateScope())
 {
     var db = scope.ServiceProvider.GetRequiredService<AppDbContext>();
     db.Database.EnsureCreated();
 }
 
-// PORT Railway
+// ================== PORT (RAILWAY) ==================
 var port = Environment.GetEnvironmentVariable("PORT") ?? "8080";
 app.Urls.Add($"http://0.0.0.0:{port}");
 
-// Configure Swagger
+// ================== MIDDLEWARE ==================
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
@@ -104,10 +115,11 @@ app.UseStaticFiles();
 app.UseAuthentication();
 app.UseAuthorization();
 
+// ================== ROUTING ==================
 app.MapControllers();
 
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=AuthView}/{action=Login}/{id?}");
-    
+
 app.Run();
