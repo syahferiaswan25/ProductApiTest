@@ -51,7 +51,7 @@ builder.Services.AddSwaggerGen(options =>
 });
 
 builder.Services.AddDbContext<AppDbContext>(options =>
-    options.UseSqlite("Data Source=products.db"));
+    options.UseSqlite("Data Source=/tmp/products.db"));
 
 builder.Services.AddScoped<IProductRepository, ProductRepository>();    
 
@@ -78,6 +78,17 @@ builder.Services.AddAuthentication(options =>
 
 builder.Services.AddMemoryCache();
 var app = builder.Build();
+
+// Ensure DB created
+using (var scope = app.Services.CreateScope())
+{
+    var db = scope.ServiceProvider.GetRequiredService<AppDbContext>();
+    db.Database.EnsureCreated();
+}
+
+// PORT Railway
+var port = Environment.GetEnvironmentVariable("PORT") ?? "8080";
+app.Urls.Add($"http://0.0.0.0:{port}");
 
 // Configure Swagger
 if (app.Environment.IsDevelopment())
