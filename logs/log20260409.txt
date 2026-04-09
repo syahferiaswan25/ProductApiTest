@@ -546,3 +546,901 @@ FROM "Products" AS "p"
 2026-04-09 01:34:53.980 +07:00 [INF] Executed endpoint 'ProductApi.Controllers.ProductViewController.Index (ProductApi)'
 2026-04-09 01:34:53.980 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:8080/ProductView/Index - 200 null text/html; charset=utf-8 22.8136ms
 2026-04-09 01:34:58.826 +07:00 [INF] Application is shutting down...
+2026-04-09 02:07:04.571 +07:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "type" = 'table' AND "rootpage" IS NOT NULL;
+2026-04-09 02:07:04.642 +07:00 [INF] User profile is available. Using '/Users/amfsdigital/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2026-04-09 02:07:04.668 +07:00 [WRN] The WebRootPath was not found: /Users/amfsdigital/product-assessment/ProductApi/wwwroot. Static files may be unavailable.
+2026-04-09 02:07:04.684 +07:00 [INF] Now listening on: http://0.0.0.0:8080
+2026-04-09 02:07:04.685 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-04-09 02:07:04.685 +07:00 [INF] Hosting environment: Development
+2026-04-09 02:07:04.685 +07:00 [INF] Content root path: /Users/amfsdigital/product-assessment/ProductApi
+2026-04-09 02:07:09.202 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:8080/ - null null
+2026-04-09 02:07:09.240 +07:00 [INF] Executing endpoint 'ProductApi.Controllers.AuthViewController.Login (ProductApi)'
+2026-04-09 02:07:09.248 +07:00 [INF] Route matched with {action = "Login", controller = "AuthView"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Login() on controller ProductApi.Controllers.AuthViewController (ProductApi).
+2026-04-09 02:07:09.262 +07:00 [INF] Executing ViewResult, running view Login.
+2026-04-09 02:07:09.301 +07:00 [INF] Executed ViewResult - view Login executed in 40.94ms.
+2026-04-09 02:07:09.304 +07:00 [INF] Executed action ProductApi.Controllers.AuthViewController.Login (ProductApi) in 54.8386ms
+2026-04-09 02:07:09.304 +07:00 [INF] Executed endpoint 'ProductApi.Controllers.AuthViewController.Login (ProductApi)'
+2026-04-09 02:07:09.308 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:8080/ - 200 null text/html; charset=utf-8 106.6039ms
+2026-04-09 02:07:12.317 +07:00 [INF] Request starting HTTP/1.1 POST http://localhost:8080/ - application/x-www-form-urlencoded 208
+2026-04-09 02:07:12.319 +07:00 [INF] Executing endpoint 'ProductApi.Controllers.AuthViewController.Login (ProductApi)'
+2026-04-09 02:07:12.331 +07:00 [INF] Route matched with {action = "Login", controller = "AuthView"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(System.String, System.String) on controller ProductApi.Controllers.AuthViewController (ProductApi).
+2026-04-09 02:07:12.385 +07:00 [INF] Start processing HTTP request POST https://localhost:8080/api/auth/login
+2026-04-09 02:07:12.386 +07:00 [INF] Sending HTTP request POST https://localhost:8080/api/auth/login
+2026-04-09 02:07:12.401 +07:00 [INF] Executed action ProductApi.Controllers.AuthViewController.Login (ProductApi) in 70.3433ms
+2026-04-09 02:07:12.402 +07:00 [INF] Executed endpoint 'ProductApi.Controllers.AuthViewController.Login (ProductApi)'
+2026-04-09 02:07:12.402 +07:00 [ERR] Unhandled exception
+System.Net.Http.HttpRequestException: The SSL connection could not be established, see inner exception.
+ ---> System.Security.Authentication.AuthenticationException: Cannot determine the frame size or a corrupted frame was received.
+   at System.Net.Security.SslStream.GetFrameSize(ReadOnlySpan`1 buffer)
+   at System.Net.Security.SslStream.EnsureFullTlsFrameAsync[TIOAdapter](CancellationToken cancellationToken, Int32 estimatedSize)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
+   at System.Net.Security.SslStream.ReceiveHandshakeFrameAsync[TIOAdapter](CancellationToken cancellationToken)
+   at System.Net.Security.SslStream.ForceAuthenticationAsync[TIOAdapter](Boolean receiveFirst, Byte[] reAuthenticationData, CancellationToken cancellationToken)
+   at System.Net.Http.ConnectHelper.EstablishSslConnectionAsync(SslClientAuthenticationOptions sslOptions, HttpRequestMessage request, Boolean async, Stream stream, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.ConnectHelper.EstablishSslConnectionAsync(SslClientAuthenticationOptions sslOptions, HttpRequestMessage request, Boolean async, Stream stream, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.CreateHttp11ConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.AddHttp11ConnectionAsync(QueueItem queueItem)
+   at System.Threading.Tasks.TaskCompletionSourceWithCancellation`1.WaitWithCancellationAsync(CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithVersionDetectionAndRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.DiagnosticsHandler.SendAsyncCore(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.RedirectHandler.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at Microsoft.Extensions.Http.Logging.LoggingHttpMessageHandler.<SendCoreAsync>g__Core|5_0(HttpRequestMessage request, Boolean useAsync, CancellationToken cancellationToken)
+   at Microsoft.Extensions.Http.Logging.LoggingScopeHttpMessageHandler.<SendCoreAsync>g__Core|5_0(HttpRequestMessage request, Boolean useAsync, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.<SendAsync>g__Core|83_0(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationTokenSource cts, Boolean disposeCts, CancellationTokenSource pendingRequestsCts, CancellationToken originalCancellationToken)
+   at ProductApi.Controllers.AuthViewController.Login(String username, String password) in /Users/amfsdigital/product-assessment/ProductApi/Controllers/AuthViewController.cs:line 38
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at ProductApi.Middleware.ExceptionMiddleware.InvokeAsync(HttpContext context) in /Users/amfsdigital/product-assessment/ProductApi/Middleware/ExceptionMidleware.cs:line 23
+2026-04-09 02:07:12.411 +07:00 [INF] Request finished HTTP/1.1 POST http://localhost:8080/ - 500 null application/json 94.5061ms
+2026-04-09 02:12:59.553 +07:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "type" = 'table' AND "rootpage" IS NOT NULL;
+2026-04-09 02:12:59.622 +07:00 [INF] User profile is available. Using '/Users/amfsdigital/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2026-04-09 02:12:59.646 +07:00 [WRN] The WebRootPath was not found: /Users/amfsdigital/product-assessment/ProductApi/wwwroot. Static files may be unavailable.
+2026-04-09 02:12:59.661 +07:00 [INF] Now listening on: http://0.0.0.0:8080
+2026-04-09 02:12:59.662 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-04-09 02:12:59.662 +07:00 [INF] Hosting environment: Development
+2026-04-09 02:12:59.662 +07:00 [INF] Content root path: /Users/amfsdigital/product-assessment/ProductApi
+2026-04-09 02:13:03.890 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:8080/ - null null
+2026-04-09 02:13:03.925 +07:00 [INF] Executing endpoint 'ProductApi.Controllers.AuthViewController.Login (ProductApi)'
+2026-04-09 02:13:03.932 +07:00 [INF] Route matched with {action = "Login", controller = "AuthView"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Login() on controller ProductApi.Controllers.AuthViewController (ProductApi).
+2026-04-09 02:13:03.944 +07:00 [INF] Executing ViewResult, running view Login.
+2026-04-09 02:13:03.982 +07:00 [INF] Executed ViewResult - view Login executed in 40.0158ms.
+2026-04-09 02:13:03.983 +07:00 [INF] Executed action ProductApi.Controllers.AuthViewController.Login (ProductApi) in 50.3981ms
+2026-04-09 02:13:03.983 +07:00 [INF] Executed endpoint 'ProductApi.Controllers.AuthViewController.Login (ProductApi)'
+2026-04-09 02:13:03.985 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:8080/ - 200 null text/html; charset=utf-8 96.046ms
+2026-04-09 02:13:07.057 +07:00 [INF] Request starting HTTP/1.1 POST http://localhost:8080/ - application/x-www-form-urlencoded 208
+2026-04-09 02:13:07.060 +07:00 [INF] Executing endpoint 'ProductApi.Controllers.AuthViewController.Login (ProductApi)'
+2026-04-09 02:13:07.072 +07:00 [INF] Route matched with {action = "Login", controller = "AuthView"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(System.String, System.String) on controller ProductApi.Controllers.AuthViewController (ProductApi).
+2026-04-09 02:13:07.125 +07:00 [INF] Start processing HTTP request POST https://localhost:8080/api/auth/login
+2026-04-09 02:13:07.127 +07:00 [INF] Sending HTTP request POST https://localhost:8080/api/auth/login
+2026-04-09 02:13:07.141 +07:00 [INF] Executed action ProductApi.Controllers.AuthViewController.Login (ProductApi) in 68.9681ms
+2026-04-09 02:13:07.142 +07:00 [INF] Executed endpoint 'ProductApi.Controllers.AuthViewController.Login (ProductApi)'
+2026-04-09 02:13:07.142 +07:00 [ERR] Unhandled exception
+System.Net.Http.HttpRequestException: The SSL connection could not be established, see inner exception.
+ ---> System.Security.Authentication.AuthenticationException: Cannot determine the frame size or a corrupted frame was received.
+   at System.Net.Security.SslStream.GetFrameSize(ReadOnlySpan`1 buffer)
+   at System.Net.Security.SslStream.EnsureFullTlsFrameAsync[TIOAdapter](CancellationToken cancellationToken, Int32 estimatedSize)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
+   at System.Net.Security.SslStream.ReceiveHandshakeFrameAsync[TIOAdapter](CancellationToken cancellationToken)
+   at System.Net.Security.SslStream.ForceAuthenticationAsync[TIOAdapter](Boolean receiveFirst, Byte[] reAuthenticationData, CancellationToken cancellationToken)
+   at System.Net.Http.ConnectHelper.EstablishSslConnectionAsync(SslClientAuthenticationOptions sslOptions, HttpRequestMessage request, Boolean async, Stream stream, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.ConnectHelper.EstablishSslConnectionAsync(SslClientAuthenticationOptions sslOptions, HttpRequestMessage request, Boolean async, Stream stream, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.CreateHttp11ConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.AddHttp11ConnectionAsync(QueueItem queueItem)
+   at System.Threading.Tasks.TaskCompletionSourceWithCancellation`1.WaitWithCancellationAsync(CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithVersionDetectionAndRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.DiagnosticsHandler.SendAsyncCore(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.RedirectHandler.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at Microsoft.Extensions.Http.Logging.LoggingHttpMessageHandler.<SendCoreAsync>g__Core|5_0(HttpRequestMessage request, Boolean useAsync, CancellationToken cancellationToken)
+   at Microsoft.Extensions.Http.Logging.LoggingScopeHttpMessageHandler.<SendCoreAsync>g__Core|5_0(HttpRequestMessage request, Boolean useAsync, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.<SendAsync>g__Core|83_0(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationTokenSource cts, Boolean disposeCts, CancellationTokenSource pendingRequestsCts, CancellationToken originalCancellationToken)
+   at ProductApi.Controllers.AuthViewController.Login(String username, String password) in /Users/amfsdigital/product-assessment/ProductApi/Controllers/AuthViewController.cs:line 38
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at ProductApi.Middleware.ExceptionMiddleware.InvokeAsync(HttpContext context) in /Users/amfsdigital/product-assessment/ProductApi/Middleware/ExceptionMidleware.cs:line 23
+2026-04-09 02:13:07.152 +07:00 [INF] Request finished HTTP/1.1 POST http://localhost:8080/ - 500 null application/json 94.6459ms
+2026-04-09 02:14:12.707 +07:00 [INF] Application is shutting down...
+2026-04-09 02:14:15.796 +07:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "type" = 'table' AND "rootpage" IS NOT NULL;
+2026-04-09 02:14:15.868 +07:00 [INF] User profile is available. Using '/Users/amfsdigital/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2026-04-09 02:14:15.895 +07:00 [WRN] The WebRootPath was not found: /Users/amfsdigital/product-assessment/ProductApi/wwwroot. Static files may be unavailable.
+2026-04-09 02:14:15.911 +07:00 [INF] Now listening on: http://0.0.0.0:8080
+2026-04-09 02:14:15.912 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-04-09 02:14:15.912 +07:00 [INF] Hosting environment: Development
+2026-04-09 02:14:15.912 +07:00 [INF] Content root path: /Users/amfsdigital/product-assessment/ProductApi
+2026-04-09 02:14:19.742 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:8080/ - null null
+2026-04-09 02:14:19.777 +07:00 [INF] Executing endpoint 'ProductApi.Controllers.AuthViewController.Login (ProductApi)'
+2026-04-09 02:14:19.785 +07:00 [INF] Route matched with {action = "Login", controller = "AuthView"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Login() on controller ProductApi.Controllers.AuthViewController (ProductApi).
+2026-04-09 02:14:19.797 +07:00 [INF] Executing ViewResult, running view Login.
+2026-04-09 02:14:19.833 +07:00 [INF] Executed ViewResult - view Login executed in 38.5227ms.
+2026-04-09 02:14:19.834 +07:00 [INF] Executed action ProductApi.Controllers.AuthViewController.Login (ProductApi) in 48.7851ms
+2026-04-09 02:14:19.834 +07:00 [INF] Executed endpoint 'ProductApi.Controllers.AuthViewController.Login (ProductApi)'
+2026-04-09 02:14:19.836 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:8080/ - 200 null text/html; charset=utf-8 94.7553ms
+2026-04-09 02:14:22.845 +07:00 [INF] Request starting HTTP/1.1 POST http://localhost:8080/ - application/x-www-form-urlencoded 208
+2026-04-09 02:14:22.848 +07:00 [INF] Executing endpoint 'ProductApi.Controllers.AuthViewController.Login (ProductApi)'
+2026-04-09 02:14:22.861 +07:00 [INF] Route matched with {action = "Login", controller = "AuthView"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(System.String, System.String) on controller ProductApi.Controllers.AuthViewController (ProductApi).
+2026-04-09 02:14:22.914 +07:00 [INF] Start processing HTTP request POST https://localhost:8080/api/auth/login
+2026-04-09 02:14:22.915 +07:00 [INF] Sending HTTP request POST https://localhost:8080/api/auth/login
+2026-04-09 02:14:22.930 +07:00 [INF] Executed action ProductApi.Controllers.AuthViewController.Login (ProductApi) in 67.828ms
+2026-04-09 02:14:22.930 +07:00 [INF] Executed endpoint 'ProductApi.Controllers.AuthViewController.Login (ProductApi)'
+2026-04-09 02:14:22.930 +07:00 [ERR] Unhandled exception
+System.Net.Http.HttpRequestException: The SSL connection could not be established, see inner exception.
+ ---> System.Security.Authentication.AuthenticationException: Cannot determine the frame size or a corrupted frame was received.
+   at System.Net.Security.SslStream.GetFrameSize(ReadOnlySpan`1 buffer)
+   at System.Net.Security.SslStream.EnsureFullTlsFrameAsync[TIOAdapter](CancellationToken cancellationToken, Int32 estimatedSize)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
+   at System.Net.Security.SslStream.ReceiveHandshakeFrameAsync[TIOAdapter](CancellationToken cancellationToken)
+   at System.Net.Security.SslStream.ForceAuthenticationAsync[TIOAdapter](Boolean receiveFirst, Byte[] reAuthenticationData, CancellationToken cancellationToken)
+   at System.Net.Http.ConnectHelper.EstablishSslConnectionAsync(SslClientAuthenticationOptions sslOptions, HttpRequestMessage request, Boolean async, Stream stream, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.ConnectHelper.EstablishSslConnectionAsync(SslClientAuthenticationOptions sslOptions, HttpRequestMessage request, Boolean async, Stream stream, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.CreateHttp11ConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.AddHttp11ConnectionAsync(QueueItem queueItem)
+   at System.Threading.Tasks.TaskCompletionSourceWithCancellation`1.WaitWithCancellationAsync(CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithVersionDetectionAndRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.DiagnosticsHandler.SendAsyncCore(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.RedirectHandler.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at Microsoft.Extensions.Http.Logging.LoggingHttpMessageHandler.<SendCoreAsync>g__Core|5_0(HttpRequestMessage request, Boolean useAsync, CancellationToken cancellationToken)
+   at Microsoft.Extensions.Http.Logging.LoggingScopeHttpMessageHandler.<SendCoreAsync>g__Core|5_0(HttpRequestMessage request, Boolean useAsync, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.<SendAsync>g__Core|83_0(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationTokenSource cts, Boolean disposeCts, CancellationTokenSource pendingRequestsCts, CancellationToken originalCancellationToken)
+   at ProductApi.Controllers.AuthViewController.Login(String username, String password) in /Users/amfsdigital/product-assessment/ProductApi/Controllers/AuthViewController.cs:line 38
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at ProductApi.Middleware.ExceptionMiddleware.InvokeAsync(HttpContext context) in /Users/amfsdigital/product-assessment/ProductApi/Middleware/ExceptionMidleware.cs:line 23
+2026-04-09 02:14:22.938 +07:00 [INF] Request finished HTTP/1.1 POST http://localhost:8080/ - 500 null application/json 93.2392ms
+2026-04-09 02:14:49.042 +07:00 [INF] Request starting HTTP/1.1 POST http://localhost:8080/ - application/x-www-form-urlencoded 208
+2026-04-09 02:14:49.045 +07:00 [INF] Executing endpoint 'ProductApi.Controllers.AuthViewController.Login (ProductApi)'
+2026-04-09 02:14:49.046 +07:00 [INF] Route matched with {action = "Login", controller = "AuthView"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(System.String, System.String) on controller ProductApi.Controllers.AuthViewController (ProductApi).
+2026-04-09 02:14:49.047 +07:00 [INF] Start processing HTTP request POST https://localhost:8080/api/auth/login
+2026-04-09 02:14:49.047 +07:00 [INF] Sending HTTP request POST https://localhost:8080/api/auth/login
+2026-04-09 02:14:49.051 +07:00 [INF] Executed action ProductApi.Controllers.AuthViewController.Login (ProductApi) in 5.1423ms
+2026-04-09 02:14:49.052 +07:00 [INF] Executed endpoint 'ProductApi.Controllers.AuthViewController.Login (ProductApi)'
+2026-04-09 02:14:49.052 +07:00 [ERR] Unhandled exception
+System.Net.Http.HttpRequestException: The SSL connection could not be established, see inner exception.
+ ---> System.Security.Authentication.AuthenticationException: Cannot determine the frame size or a corrupted frame was received.
+   at System.Net.Security.SslStream.GetFrameSize(ReadOnlySpan`1 buffer)
+   at System.Net.Security.SslStream.EnsureFullTlsFrameAsync[TIOAdapter](CancellationToken cancellationToken, Int32 estimatedSize)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
+   at System.Net.Security.SslStream.ReceiveHandshakeFrameAsync[TIOAdapter](CancellationToken cancellationToken)
+   at System.Net.Security.SslStream.ForceAuthenticationAsync[TIOAdapter](Boolean receiveFirst, Byte[] reAuthenticationData, CancellationToken cancellationToken)
+   at System.Net.Http.ConnectHelper.EstablishSslConnectionAsync(SslClientAuthenticationOptions sslOptions, HttpRequestMessage request, Boolean async, Stream stream, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.ConnectHelper.EstablishSslConnectionAsync(SslClientAuthenticationOptions sslOptions, HttpRequestMessage request, Boolean async, Stream stream, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.CreateHttp11ConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.AddHttp11ConnectionAsync(QueueItem queueItem)
+   at System.Threading.Tasks.TaskCompletionSourceWithCancellation`1.WaitWithCancellationAsync(CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithVersionDetectionAndRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.DiagnosticsHandler.SendAsyncCore(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.RedirectHandler.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at Microsoft.Extensions.Http.Logging.LoggingHttpMessageHandler.<SendCoreAsync>g__Core|5_0(HttpRequestMessage request, Boolean useAsync, CancellationToken cancellationToken)
+   at Microsoft.Extensions.Http.Logging.LoggingScopeHttpMessageHandler.<SendCoreAsync>g__Core|5_0(HttpRequestMessage request, Boolean useAsync, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.<SendAsync>g__Core|83_0(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationTokenSource cts, Boolean disposeCts, CancellationTokenSource pendingRequestsCts, CancellationToken originalCancellationToken)
+   at ProductApi.Controllers.AuthViewController.Login(String username, String password) in /Users/amfsdigital/product-assessment/ProductApi/Controllers/AuthViewController.cs:line 38
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at ProductApi.Middleware.ExceptionMiddleware.InvokeAsync(HttpContext context) in /Users/amfsdigital/product-assessment/ProductApi/Middleware/ExceptionMidleware.cs:line 23
+2026-04-09 02:14:49.055 +07:00 [INF] Request finished HTTP/1.1 POST http://localhost:8080/ - 500 null application/json 12.4294ms
+2026-04-09 02:14:49.075 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:8080/favicon.ico - null null
+2026-04-09 02:14:49.079 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:8080/favicon.ico - 404 0 null 4.1363ms
+2026-04-09 02:14:49.081 +07:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:8080/favicon.ico, Response status code: 404
+2026-04-09 02:14:50.741 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:8080/ - null null
+2026-04-09 02:14:50.742 +07:00 [INF] Executing endpoint 'ProductApi.Controllers.AuthViewController.Login (ProductApi)'
+2026-04-09 02:14:50.742 +07:00 [INF] Route matched with {action = "Login", controller = "AuthView"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Login() on controller ProductApi.Controllers.AuthViewController (ProductApi).
+2026-04-09 02:14:50.744 +07:00 [INF] Executing ViewResult, running view Login.
+2026-04-09 02:14:50.747 +07:00 [INF] Executed ViewResult - view Login executed in 3.9917ms.
+2026-04-09 02:14:50.747 +07:00 [INF] Executed action ProductApi.Controllers.AuthViewController.Login (ProductApi) in 4.4258ms
+2026-04-09 02:14:50.747 +07:00 [INF] Executed endpoint 'ProductApi.Controllers.AuthViewController.Login (ProductApi)'
+2026-04-09 02:14:50.747 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:8080/ - 200 null text/html; charset=utf-8 6.3592ms
+2026-04-09 02:14:53.320 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:8080/ - null null
+2026-04-09 02:14:53.320 +07:00 [INF] Executing endpoint 'ProductApi.Controllers.AuthViewController.Login (ProductApi)'
+2026-04-09 02:14:53.320 +07:00 [INF] Route matched with {action = "Login", controller = "AuthView"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Login() on controller ProductApi.Controllers.AuthViewController (ProductApi).
+2026-04-09 02:14:53.321 +07:00 [INF] Executing ViewResult, running view Login.
+2026-04-09 02:14:53.321 +07:00 [INF] Executed ViewResult - view Login executed in 0.8877ms.
+2026-04-09 02:14:53.322 +07:00 [INF] Executed action ProductApi.Controllers.AuthViewController.Login (ProductApi) in 1.2451ms
+2026-04-09 02:14:53.322 +07:00 [INF] Executed endpoint 'ProductApi.Controllers.AuthViewController.Login (ProductApi)'
+2026-04-09 02:14:53.322 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:8080/ - 200 null text/html; charset=utf-8 2.297ms
+2026-04-09 02:14:53.389 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:8080/favicon.ico - null null
+2026-04-09 02:14:53.390 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:8080/favicon.ico - 404 0 null 1.2412ms
+2026-04-09 02:14:53.390 +07:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:8080/favicon.ico, Response status code: 404
+2026-04-09 02:14:57.576 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:8080/ - null null
+2026-04-09 02:14:57.577 +07:00 [INF] Executing endpoint 'ProductApi.Controllers.AuthViewController.Login (ProductApi)'
+2026-04-09 02:14:57.577 +07:00 [INF] Route matched with {action = "Login", controller = "AuthView"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Login() on controller ProductApi.Controllers.AuthViewController (ProductApi).
+2026-04-09 02:14:57.577 +07:00 [INF] Executing ViewResult, running view Login.
+2026-04-09 02:14:57.586 +07:00 [INF] Executed ViewResult - view Login executed in 9.155ms.
+2026-04-09 02:14:57.587 +07:00 [INF] Executed action ProductApi.Controllers.AuthViewController.Login (ProductApi) in 9.6227ms
+2026-04-09 02:14:57.587 +07:00 [INF] Executed endpoint 'ProductApi.Controllers.AuthViewController.Login (ProductApi)'
+2026-04-09 02:14:57.587 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:8080/ - 200 null text/html; charset=utf-8 10.7255ms
+2026-04-09 02:15:00.899 +07:00 [INF] Request starting HTTP/1.1 POST http://localhost:8080/ - application/x-www-form-urlencoded 208
+2026-04-09 02:15:00.900 +07:00 [INF] Executing endpoint 'ProductApi.Controllers.AuthViewController.Login (ProductApi)'
+2026-04-09 02:15:00.900 +07:00 [INF] Route matched with {action = "Login", controller = "AuthView"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(System.String, System.String) on controller ProductApi.Controllers.AuthViewController (ProductApi).
+2026-04-09 02:15:00.901 +07:00 [INF] Start processing HTTP request POST https://localhost:8080/api/auth/login
+2026-04-09 02:15:00.901 +07:00 [INF] Sending HTTP request POST https://localhost:8080/api/auth/login
+2026-04-09 02:15:00.904 +07:00 [INF] Executed action ProductApi.Controllers.AuthViewController.Login (ProductApi) in 3.7745ms
+2026-04-09 02:15:00.904 +07:00 [INF] Executed endpoint 'ProductApi.Controllers.AuthViewController.Login (ProductApi)'
+2026-04-09 02:15:00.904 +07:00 [ERR] Unhandled exception
+System.Net.Http.HttpRequestException: The SSL connection could not be established, see inner exception.
+ ---> System.Security.Authentication.AuthenticationException: Cannot determine the frame size or a corrupted frame was received.
+   at System.Net.Security.SslStream.GetFrameSize(ReadOnlySpan`1 buffer)
+   at System.Net.Security.SslStream.EnsureFullTlsFrameAsync[TIOAdapter](CancellationToken cancellationToken, Int32 estimatedSize)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
+   at System.Net.Security.SslStream.ReceiveHandshakeFrameAsync[TIOAdapter](CancellationToken cancellationToken)
+   at System.Net.Security.SslStream.ForceAuthenticationAsync[TIOAdapter](Boolean receiveFirst, Byte[] reAuthenticationData, CancellationToken cancellationToken)
+   at System.Net.Http.ConnectHelper.EstablishSslConnectionAsync(SslClientAuthenticationOptions sslOptions, HttpRequestMessage request, Boolean async, Stream stream, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.ConnectHelper.EstablishSslConnectionAsync(SslClientAuthenticationOptions sslOptions, HttpRequestMessage request, Boolean async, Stream stream, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.CreateHttp11ConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.AddHttp11ConnectionAsync(QueueItem queueItem)
+   at System.Threading.Tasks.TaskCompletionSourceWithCancellation`1.WaitWithCancellationAsync(CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithVersionDetectionAndRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.DiagnosticsHandler.SendAsyncCore(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.RedirectHandler.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at Microsoft.Extensions.Http.Logging.LoggingHttpMessageHandler.<SendCoreAsync>g__Core|5_0(HttpRequestMessage request, Boolean useAsync, CancellationToken cancellationToken)
+   at Microsoft.Extensions.Http.Logging.LoggingScopeHttpMessageHandler.<SendCoreAsync>g__Core|5_0(HttpRequestMessage request, Boolean useAsync, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.<SendAsync>g__Core|83_0(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationTokenSource cts, Boolean disposeCts, CancellationTokenSource pendingRequestsCts, CancellationToken originalCancellationToken)
+   at ProductApi.Controllers.AuthViewController.Login(String username, String password) in /Users/amfsdigital/product-assessment/ProductApi/Controllers/AuthViewController.cs:line 38
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at ProductApi.Middleware.ExceptionMiddleware.InvokeAsync(HttpContext context) in /Users/amfsdigital/product-assessment/ProductApi/Middleware/ExceptionMidleware.cs:line 23
+2026-04-09 02:15:00.908 +07:00 [INF] Request finished HTTP/1.1 POST http://localhost:8080/ - 500 null application/json 8.3618ms
+2026-04-09 02:15:49.630 +07:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "type" = 'table' AND "rootpage" IS NOT NULL;
+2026-04-09 02:15:49.703 +07:00 [INF] User profile is available. Using '/Users/amfsdigital/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2026-04-09 02:15:49.730 +07:00 [WRN] The WebRootPath was not found: /Users/amfsdigital/product-assessment/ProductApi/wwwroot. Static files may be unavailable.
+2026-04-09 02:15:49.750 +07:00 [ERR] Hosting failed to start
+System.IO.IOException: Failed to bind to address http://0.0.0.0:8080: address already in use.
+ ---> Microsoft.AspNetCore.Connections.AddressInUseException: Address already in use
+ ---> System.Net.Sockets.SocketException (48): Address already in use
+   at System.Net.Sockets.Socket.UpdateStatusAfterSocketErrorAndThrowException(SocketError error, Boolean disconnectOnFailure, String callerName)
+   at System.Net.Sockets.Socket.DoBind(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   at System.Net.Sockets.Socket.Bind(EndPoint localEP)
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketTransportOptions.CreateDefaultBoundListenSocket(EndPoint endpoint)
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketConnectionListener.Bind()
+   --- End of inner exception stack trace ---
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketConnectionListener.Bind()
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketTransportFactory.BindAsync(EndPoint endpoint, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Infrastructure.TransportManager.BindAsync(EndPoint endPoint, ConnectionDelegate connectionDelegate, EndpointConfig endpointConfig, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.<>c__DisplayClass28_0`1.<<StartAsync>g__OnBind|0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindEndpointAsync(ListenOptions endpoint, AddressBindContext context, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindEndpointAsync(ListenOptions endpoint, AddressBindContext context, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.ListenOptions.BindAsync(AddressBindContext context, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.AddressesStrategy.BindAsync(AddressBindContext context, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindAsync(ListenOptions[] listenOptions, AddressBindContext context, Func`2 useHttps, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.BindAsync(CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.StartAsync[TContext](IHttpApplication`1 application, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Hosting.GenericWebHostService.StartAsync(CancellationToken cancellationToken)
+   at Microsoft.Extensions.Hosting.Internal.Host.<StartAsync>b__15_1(IHostedService service, CancellationToken token)
+   at Microsoft.Extensions.Hosting.Internal.Host.ForeachService[T](IEnumerable`1 services, CancellationToken token, Boolean concurrent, Boolean abortOnFirstException, List`1 exceptions, Func`3 operation)
+2026-04-09 02:16:05.087 +07:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "type" = 'table' AND "rootpage" IS NOT NULL;
+2026-04-09 02:16:05.152 +07:00 [INF] User profile is available. Using '/Users/amfsdigital/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2026-04-09 02:16:05.176 +07:00 [WRN] The WebRootPath was not found: /Users/amfsdigital/product-assessment/ProductApi/wwwroot. Static files may be unavailable.
+2026-04-09 02:16:05.193 +07:00 [ERR] Hosting failed to start
+System.IO.IOException: Failed to bind to address http://0.0.0.0:8080: address already in use.
+ ---> Microsoft.AspNetCore.Connections.AddressInUseException: Address already in use
+ ---> System.Net.Sockets.SocketException (48): Address already in use
+   at System.Net.Sockets.Socket.UpdateStatusAfterSocketErrorAndThrowException(SocketError error, Boolean disconnectOnFailure, String callerName)
+   at System.Net.Sockets.Socket.DoBind(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   at System.Net.Sockets.Socket.Bind(EndPoint localEP)
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketTransportOptions.CreateDefaultBoundListenSocket(EndPoint endpoint)
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketConnectionListener.Bind()
+   --- End of inner exception stack trace ---
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketConnectionListener.Bind()
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketTransportFactory.BindAsync(EndPoint endpoint, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Infrastructure.TransportManager.BindAsync(EndPoint endPoint, ConnectionDelegate connectionDelegate, EndpointConfig endpointConfig, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.<>c__DisplayClass28_0`1.<<StartAsync>g__OnBind|0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindEndpointAsync(ListenOptions endpoint, AddressBindContext context, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindEndpointAsync(ListenOptions endpoint, AddressBindContext context, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.ListenOptions.BindAsync(AddressBindContext context, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.AddressesStrategy.BindAsync(AddressBindContext context, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindAsync(ListenOptions[] listenOptions, AddressBindContext context, Func`2 useHttps, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.BindAsync(CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.StartAsync[TContext](IHttpApplication`1 application, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Hosting.GenericWebHostService.StartAsync(CancellationToken cancellationToken)
+   at Microsoft.Extensions.Hosting.Internal.Host.<StartAsync>b__15_1(IHostedService service, CancellationToken token)
+   at Microsoft.Extensions.Hosting.Internal.Host.ForeachService[T](IEnumerable`1 services, CancellationToken token, Boolean concurrent, Boolean abortOnFirstException, List`1 exceptions, Func`3 operation)
+2026-04-09 10:33:25.879 +07:00 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "type" = 'table' AND "rootpage" IS NOT NULL;
+2026-04-09 10:33:25.944 +07:00 [INF] User profile is available. Using '/Users/amfsdigital/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2026-04-09 10:33:25.971 +07:00 [WRN] The WebRootPath was not found: /Users/amfsdigital/product-assessment/ProductApi/wwwroot. Static files may be unavailable.
+2026-04-09 10:33:25.985 +07:00 [INF] Now listening on: http://0.0.0.0:8080
+2026-04-09 10:33:25.986 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-04-09 10:33:25.986 +07:00 [INF] Hosting environment: Development
+2026-04-09 10:33:25.986 +07:00 [INF] Content root path: /Users/amfsdigital/product-assessment/ProductApi
+2026-04-09 10:33:33.374 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:8080/ - null null
+2026-04-09 10:33:33.411 +07:00 [INF] Executing endpoint 'ProductApi.Controllers.AuthViewController.Login (ProductApi)'
+2026-04-09 10:33:33.418 +07:00 [INF] Route matched with {action = "Login", controller = "AuthView"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Login() on controller ProductApi.Controllers.AuthViewController (ProductApi).
+2026-04-09 10:33:33.430 +07:00 [INF] Executing ViewResult, running view Login.
+2026-04-09 10:33:33.466 +07:00 [INF] Executed ViewResult - view Login executed in 37.9147ms.
+2026-04-09 10:33:33.467 +07:00 [INF] Executed action ProductApi.Controllers.AuthViewController.Login (ProductApi) in 48.0829ms
+2026-04-09 10:33:33.467 +07:00 [INF] Executed endpoint 'ProductApi.Controllers.AuthViewController.Login (ProductApi)'
+2026-04-09 10:33:33.469 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:8080/ - 200 null text/html; charset=utf-8 95.8133ms
+2026-04-09 10:33:40.269 +07:00 [INF] Request starting HTTP/1.1 POST http://localhost:8080/ - application/x-www-form-urlencoded 208
+2026-04-09 10:33:40.272 +07:00 [INF] Executing endpoint 'ProductApi.Controllers.AuthViewController.Login (ProductApi)'
+2026-04-09 10:33:40.286 +07:00 [INF] Route matched with {action = "Login", controller = "AuthView"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(System.String, System.String) on controller ProductApi.Controllers.AuthViewController (ProductApi).
+2026-04-09 10:33:40.338 +07:00 [INF] Start processing HTTP request POST https://localhost:8080/api/auth/login
+2026-04-09 10:33:40.339 +07:00 [INF] Sending HTTP request POST https://localhost:8080/api/auth/login
+2026-04-09 10:33:40.354 +07:00 [INF] Executed action ProductApi.Controllers.AuthViewController.Login (ProductApi) in 67.7132ms
+2026-04-09 10:33:40.354 +07:00 [INF] Executed endpoint 'ProductApi.Controllers.AuthViewController.Login (ProductApi)'
+2026-04-09 10:33:40.355 +07:00 [ERR] Unhandled exception
+System.Net.Http.HttpRequestException: The SSL connection could not be established, see inner exception.
+ ---> System.Security.Authentication.AuthenticationException: Cannot determine the frame size or a corrupted frame was received.
+   at System.Net.Security.SslStream.GetFrameSize(ReadOnlySpan`1 buffer)
+   at System.Net.Security.SslStream.EnsureFullTlsFrameAsync[TIOAdapter](CancellationToken cancellationToken, Int32 estimatedSize)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
+   at System.Net.Security.SslStream.ReceiveHandshakeFrameAsync[TIOAdapter](CancellationToken cancellationToken)
+   at System.Net.Security.SslStream.ForceAuthenticationAsync[TIOAdapter](Boolean receiveFirst, Byte[] reAuthenticationData, CancellationToken cancellationToken)
+   at System.Net.Http.ConnectHelper.EstablishSslConnectionAsync(SslClientAuthenticationOptions sslOptions, HttpRequestMessage request, Boolean async, Stream stream, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.ConnectHelper.EstablishSslConnectionAsync(SslClientAuthenticationOptions sslOptions, HttpRequestMessage request, Boolean async, Stream stream, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.CreateHttp11ConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.AddHttp11ConnectionAsync(QueueItem queueItem)
+   at System.Threading.Tasks.TaskCompletionSourceWithCancellation`1.WaitWithCancellationAsync(CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithVersionDetectionAndRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.DiagnosticsHandler.SendAsyncCore(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.RedirectHandler.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at Microsoft.Extensions.Http.Logging.LoggingHttpMessageHandler.<SendCoreAsync>g__Core|5_0(HttpRequestMessage request, Boolean useAsync, CancellationToken cancellationToken)
+   at Microsoft.Extensions.Http.Logging.LoggingScopeHttpMessageHandler.<SendCoreAsync>g__Core|5_0(HttpRequestMessage request, Boolean useAsync, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.<SendAsync>g__Core|83_0(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationTokenSource cts, Boolean disposeCts, CancellationTokenSource pendingRequestsCts, CancellationToken originalCancellationToken)
+   at ProductApi.Controllers.AuthViewController.Login(String username, String password) in /Users/amfsdigital/product-assessment/ProductApi/Controllers/AuthViewController.cs:line 38
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at ProductApi.Middleware.ExceptionMiddleware.InvokeAsync(HttpContext context) in /Users/amfsdigital/product-assessment/ProductApi/Middleware/ExceptionMidleware.cs:line 23
+2026-04-09 10:33:40.365 +07:00 [INF] Request finished HTTP/1.1 POST http://localhost:8080/ - 500 null application/json 96.4146ms
+2026-04-09 10:34:00.266 +07:00 [INF] Application is shutting down...
+2026-04-09 10:42:16.191 +07:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "type" = 'table' AND "rootpage" IS NOT NULL;
+2026-04-09 10:42:16.261 +07:00 [INF] User profile is available. Using '/Users/amfsdigital/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2026-04-09 10:42:16.287 +07:00 [WRN] The WebRootPath was not found: /Users/amfsdigital/product-assessment/ProductApi/wwwroot. Static files may be unavailable.
+2026-04-09 10:42:16.303 +07:00 [INF] Now listening on: http://0.0.0.0:8080
+2026-04-09 10:42:16.304 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-04-09 10:42:16.304 +07:00 [INF] Hosting environment: Development
+2026-04-09 10:42:16.304 +07:00 [INF] Content root path: /Users/amfsdigital/product-assessment/ProductApi
+2026-04-09 10:42:21.648 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:8080/ - null null
+2026-04-09 10:42:21.683 +07:00 [INF] Executing endpoint 'ProductApi.Controllers.AuthViewController.Login (ProductApi)'
+2026-04-09 10:42:21.690 +07:00 [INF] Route matched with {action = "Login", controller = "AuthView"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Login() on controller ProductApi.Controllers.AuthViewController (ProductApi).
+2026-04-09 10:42:21.704 +07:00 [INF] Executing ViewResult, running view Login.
+2026-04-09 10:42:21.736 +07:00 [INF] Executed ViewResult - view Login executed in 34.4864ms.
+2026-04-09 10:42:21.737 +07:00 [INF] Executed action ProductApi.Controllers.AuthViewController.Login (ProductApi) in 45.8738ms
+2026-04-09 10:42:21.737 +07:00 [INF] Executed endpoint 'ProductApi.Controllers.AuthViewController.Login (ProductApi)'
+2026-04-09 10:42:21.738 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:8080/ - 200 null text/html; charset=utf-8 91.115ms
+2026-04-09 10:42:25.072 +07:00 [INF] Request starting HTTP/1.1 POST http://localhost:8080/AuthView/Login - application/x-www-form-urlencoded 25
+2026-04-09 10:42:25.075 +07:00 [INF] Executing endpoint 'ProductApi.Controllers.AuthViewController.Login (ProductApi)'
+2026-04-09 10:42:25.087 +07:00 [INF] Route matched with {action = "Login", controller = "AuthView"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(System.String, System.String) on controller ProductApi.Controllers.AuthViewController (ProductApi).
+2026-04-09 10:42:25.140 +07:00 [INF] Start processing HTTP request POST https://localhost:8080/api/auth/login
+2026-04-09 10:42:25.141 +07:00 [INF] Sending HTTP request POST https://localhost:8080/api/auth/login
+2026-04-09 10:42:25.158 +07:00 [INF] Executed action ProductApi.Controllers.AuthViewController.Login (ProductApi) in 70.5149ms
+2026-04-09 10:42:25.158 +07:00 [INF] Executed endpoint 'ProductApi.Controllers.AuthViewController.Login (ProductApi)'
+2026-04-09 10:42:25.158 +07:00 [ERR] Unhandled exception
+System.Net.Http.HttpRequestException: The SSL connection could not be established, see inner exception.
+ ---> System.Security.Authentication.AuthenticationException: Cannot determine the frame size or a corrupted frame was received.
+   at System.Net.Security.SslStream.GetFrameSize(ReadOnlySpan`1 buffer)
+   at System.Net.Security.SslStream.EnsureFullTlsFrameAsync[TIOAdapter](CancellationToken cancellationToken, Int32 estimatedSize)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
+   at System.Net.Security.SslStream.ReceiveHandshakeFrameAsync[TIOAdapter](CancellationToken cancellationToken)
+   at System.Net.Security.SslStream.ForceAuthenticationAsync[TIOAdapter](Boolean receiveFirst, Byte[] reAuthenticationData, CancellationToken cancellationToken)
+   at System.Net.Http.ConnectHelper.EstablishSslConnectionAsync(SslClientAuthenticationOptions sslOptions, HttpRequestMessage request, Boolean async, Stream stream, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.ConnectHelper.EstablishSslConnectionAsync(SslClientAuthenticationOptions sslOptions, HttpRequestMessage request, Boolean async, Stream stream, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.CreateHttp11ConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.AddHttp11ConnectionAsync(QueueItem queueItem)
+   at System.Threading.Tasks.TaskCompletionSourceWithCancellation`1.WaitWithCancellationAsync(CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithVersionDetectionAndRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.DiagnosticsHandler.SendAsyncCore(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.RedirectHandler.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at Microsoft.Extensions.Http.Logging.LoggingHttpMessageHandler.<SendCoreAsync>g__Core|5_0(HttpRequestMessage request, Boolean useAsync, CancellationToken cancellationToken)
+   at Microsoft.Extensions.Http.Logging.LoggingScopeHttpMessageHandler.<SendCoreAsync>g__Core|5_0(HttpRequestMessage request, Boolean useAsync, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.<SendAsync>g__Core|83_0(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationTokenSource cts, Boolean disposeCts, CancellationTokenSource pendingRequestsCts, CancellationToken originalCancellationToken)
+   at ProductApi.Controllers.AuthViewController.Login(String username, String password) in /Users/amfsdigital/product-assessment/ProductApi/Controllers/AuthViewController.cs:line 38
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at ProductApi.Middleware.ExceptionMiddleware.InvokeAsync(HttpContext context) in /Users/amfsdigital/product-assessment/ProductApi/Middleware/ExceptionMidleware.cs:line 23
+2026-04-09 10:42:25.167 +07:00 [INF] Request finished HTTP/1.1 POST http://localhost:8080/AuthView/Login - 500 null application/json 95.6371ms
+2026-04-09 10:42:51.836 +07:00 [INF] Application is shutting down...
+2026-04-09 10:46:52.496 +07:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "type" = 'table' AND "rootpage" IS NOT NULL;
+2026-04-09 10:46:52.565 +07:00 [INF] User profile is available. Using '/Users/amfsdigital/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2026-04-09 10:46:52.589 +07:00 [WRN] The WebRootPath was not found: /Users/amfsdigital/product-assessment/ProductApi/wwwroot. Static files may be unavailable.
+2026-04-09 10:46:52.604 +07:00 [INF] Now listening on: http://0.0.0.0:8080
+2026-04-09 10:46:52.605 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-04-09 10:46:52.605 +07:00 [INF] Hosting environment: Development
+2026-04-09 10:46:52.605 +07:00 [INF] Content root path: /Users/amfsdigital/product-assessment/ProductApi
+2026-04-09 10:46:57.011 +07:00 [INF] Request starting HTTP/1.1 POST http://localhost:8080/AuthView/Login - application/x-www-form-urlencoded 25
+2026-04-09 10:46:57.044 +07:00 [INF] Executing endpoint 'ProductApi.Controllers.AuthViewController.Login (ProductApi)'
+2026-04-09 10:46:57.054 +07:00 [INF] Route matched with {action = "Login", controller = "AuthView"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(System.String, System.String) on controller ProductApi.Controllers.AuthViewController (ProductApi).
+2026-04-09 10:46:57.091 +07:00 [INF] Start processing HTTP request POST http://localhost:8080/api/auth/login
+2026-04-09 10:46:57.092 +07:00 [INF] Sending HTTP request POST http://localhost:8080/api/auth/login
+2026-04-09 10:46:57.102 +07:00 [INF] Request starting HTTP/1.1 POST http://localhost:8080/api/auth/login - application/json; charset=utf-8 35
+2026-04-09 10:46:57.103 +07:00 [INF] Executing endpoint 'ProductApi.Controllers.AuthController.Login (ProductApi)'
+2026-04-09 10:46:57.105 +07:00 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(ProductApi.Models.LoginRequest) on controller ProductApi.Controllers.AuthController (ProductApi).
+2026-04-09 10:46:57.199 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[@__ToLower_0='?' (Size = 3), @__request_Password_1='?' (Size = 3)], CommandType='"Text"', CommandTimeout='30']
+SELECT "u"."Id", "u"."Password", "u"."Username"
+FROM "Users" AS "u"
+WHERE lower("u"."Username") = @__ToLower_0 AND "u"."Password" = @__request_Password_1
+LIMIT 1
+2026-04-09 10:46:57.218 +07:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType0`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-04-09 10:46:57.226 +07:00 [INF] Executed action ProductApi.Controllers.AuthController.Login (ProductApi) in 119.8154ms
+2026-04-09 10:46:57.227 +07:00 [INF] Executed endpoint 'ProductApi.Controllers.AuthController.Login (ProductApi)'
+2026-04-09 10:46:57.227 +07:00 [INF] Received HTTP response headers after 133.4206ms - 200
+2026-04-09 10:46:57.227 +07:00 [INF] End processing HTTP request after 136.7844ms - 200
+2026-04-09 10:46:57.229 +07:00 [INF] Request finished HTTP/1.1 POST http://localhost:8080/api/auth/login - 200 null application/json; charset=utf-8 125.9689ms
+2026-04-09 10:46:57.239 +07:00 [INF] Executing RedirectResult, redirecting to /ProductView/Index.
+2026-04-09 10:46:57.239 +07:00 [INF] Executed action ProductApi.Controllers.AuthViewController.Login (ProductApi) in 184.5224ms
+2026-04-09 10:46:57.240 +07:00 [INF] Executed endpoint 'ProductApi.Controllers.AuthViewController.Login (ProductApi)'
+2026-04-09 10:46:57.240 +07:00 [INF] Request finished HTTP/1.1 POST http://localhost:8080/AuthView/Login - 302 0 null 231.1413ms
+2026-04-09 10:46:57.242 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:8080/ProductView/Index - null null
+2026-04-09 10:46:57.243 +07:00 [ERR] An unhandled exception has occurred while executing the request.
+Microsoft.AspNetCore.Routing.Matching.AmbiguousMatchException: The request matched multiple endpoints. Matches: 
+
+ProductApi.Controllers.ProductViewController.Index (ProductApi)
+ProductApi.Controllers.ProductViewController.Index (ProductApi)
+   at Microsoft.AspNetCore.Routing.Matching.DefaultEndpointSelector.ReportAmbiguity(Span`1 candidateState)
+   at Microsoft.AspNetCore.Routing.Matching.DefaultEndpointSelector.ProcessFinalCandidates(HttpContext httpContext, Span`1 candidateState)
+   at Microsoft.AspNetCore.Routing.Matching.DefaultEndpointSelector.Select(HttpContext httpContext, Span`1 candidateState)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcher.MatchAsync(HttpContext httpContext)
+   at Microsoft.AspNetCore.Routing.Matching.DataSourceDependentMatcher.MatchAsync(HttpContext httpContext)
+   at Microsoft.AspNetCore.Routing.EndpointRoutingMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2026-04-09 10:46:57.257 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:8080/ProductView/Index - 500 null text/html; charset=utf-8 14.6835ms
+2026-04-09 10:47:05.035 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:8080/ - null null
+2026-04-09 10:47:05.042 +07:00 [INF] Executing endpoint 'ProductApi.Controllers.AuthViewController.Login (ProductApi)'
+2026-04-09 10:47:05.045 +07:00 [INF] Route matched with {action = "Login", controller = "AuthView"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Login() on controller ProductApi.Controllers.AuthViewController (ProductApi).
+2026-04-09 10:47:05.063 +07:00 [INF] Executing ViewResult, running view Login.
+2026-04-09 10:47:05.103 +07:00 [INF] Executed ViewResult - view Login executed in 48.3562ms.
+2026-04-09 10:47:05.103 +07:00 [INF] Executed action ProductApi.Controllers.AuthViewController.Login (ProductApi) in 58.4412ms
+2026-04-09 10:47:05.103 +07:00 [INF] Executed endpoint 'ProductApi.Controllers.AuthViewController.Login (ProductApi)'
+2026-04-09 10:47:05.104 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:8080/ - 200 null text/html; charset=utf-8 69.4497ms
+2026-04-09 10:47:07.988 +07:00 [INF] Request starting HTTP/1.1 POST http://localhost:8080/AuthView/Login - application/x-www-form-urlencoded 25
+2026-04-09 10:47:07.989 +07:00 [INF] Executing endpoint 'ProductApi.Controllers.AuthViewController.Login (ProductApi)'
+2026-04-09 10:47:07.989 +07:00 [INF] Route matched with {action = "Login", controller = "AuthView"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(System.String, System.String) on controller ProductApi.Controllers.AuthViewController (ProductApi).
+2026-04-09 10:47:07.991 +07:00 [INF] Start processing HTTP request POST http://localhost:8080/api/auth/login
+2026-04-09 10:47:07.991 +07:00 [INF] Sending HTTP request POST http://localhost:8080/api/auth/login
+2026-04-09 10:47:07.992 +07:00 [INF] Request starting HTTP/1.1 POST http://localhost:8080/api/auth/login - application/json; charset=utf-8 35
+2026-04-09 10:47:07.993 +07:00 [INF] Executing endpoint 'ProductApi.Controllers.AuthController.Login (ProductApi)'
+2026-04-09 10:47:07.993 +07:00 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(ProductApi.Models.LoginRequest) on controller ProductApi.Controllers.AuthController (ProductApi).
+2026-04-09 10:47:08.027 +07:00 [INF] Executed DbCommand (0ms) [Parameters=[@__ToLower_0='?' (Size = 3), @__request_Password_1='?' (Size = 3)], CommandType='"Text"', CommandTimeout='30']
+SELECT "u"."Id", "u"."Password", "u"."Username"
+FROM "Users" AS "u"
+WHERE lower("u"."Username") = @__ToLower_0 AND "u"."Password" = @__request_Password_1
+LIMIT 1
+2026-04-09 10:47:08.028 +07:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType0`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-04-09 10:47:08.028 +07:00 [INF] Executed action ProductApi.Controllers.AuthController.Login (ProductApi) in 34.8171ms
+2026-04-09 10:47:08.028 +07:00 [INF] Executed endpoint 'ProductApi.Controllers.AuthController.Login (ProductApi)'
+2026-04-09 10:47:08.028 +07:00 [INF] Request finished HTTP/1.1 POST http://localhost:8080/api/auth/login - 200 null application/json; charset=utf-8 36.2265ms
+2026-04-09 10:47:08.028 +07:00 [INF] Received HTTP response headers after 37.3089ms - 200
+2026-04-09 10:47:08.028 +07:00 [INF] End processing HTTP request after 37.7483ms - 200
+2026-04-09 10:47:08.029 +07:00 [INF] Executing RedirectResult, redirecting to /ProductView/Index.
+2026-04-09 10:47:08.029 +07:00 [INF] Executed action ProductApi.Controllers.AuthViewController.Login (ProductApi) in 39.9026ms
+2026-04-09 10:47:08.029 +07:00 [INF] Executed endpoint 'ProductApi.Controllers.AuthViewController.Login (ProductApi)'
+2026-04-09 10:47:08.030 +07:00 [INF] Request finished HTTP/1.1 POST http://localhost:8080/AuthView/Login - 302 0 null 42.1116ms
+2026-04-09 10:47:08.032 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:8080/ProductView/Index - null null
+2026-04-09 10:47:08.032 +07:00 [ERR] An unhandled exception has occurred while executing the request.
+Microsoft.AspNetCore.Routing.Matching.AmbiguousMatchException: The request matched multiple endpoints. Matches: 
+
+ProductApi.Controllers.ProductViewController.Index (ProductApi)
+ProductApi.Controllers.ProductViewController.Index (ProductApi)
+   at Microsoft.AspNetCore.Routing.Matching.DefaultEndpointSelector.ReportAmbiguity(Span`1 candidateState)
+   at Microsoft.AspNetCore.Routing.Matching.DefaultEndpointSelector.ProcessFinalCandidates(HttpContext httpContext, Span`1 candidateState)
+   at Microsoft.AspNetCore.Routing.Matching.DefaultEndpointSelector.Select(HttpContext httpContext, Span`1 candidateState)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcher.MatchAsync(HttpContext httpContext)
+   at Microsoft.AspNetCore.Routing.Matching.DataSourceDependentMatcher.MatchAsync(HttpContext httpContext)
+   at Microsoft.AspNetCore.Routing.EndpointRoutingMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2026-04-09 10:47:08.033 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:8080/ProductView/Index - 500 null text/html; charset=utf-8 1.5452ms
+2026-04-09 10:47:51.474 +07:00 [INF] Application is shutting down...
+2026-04-09 10:51:05.897 +07:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "type" = 'table' AND "rootpage" IS NOT NULL;
+2026-04-09 10:51:05.967 +07:00 [INF] User profile is available. Using '/Users/amfsdigital/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2026-04-09 10:51:05.992 +07:00 [WRN] The WebRootPath was not found: /Users/amfsdigital/product-assessment/ProductApi/wwwroot. Static files may be unavailable.
+2026-04-09 10:51:06.008 +07:00 [INF] Now listening on: http://0.0.0.0:8080
+2026-04-09 10:51:06.008 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-04-09 10:51:06.009 +07:00 [INF] Hosting environment: Development
+2026-04-09 10:51:06.009 +07:00 [INF] Content root path: /Users/amfsdigital/product-assessment/ProductApi
+2026-04-09 10:51:09.835 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:8080/ProductView/Index - null null
+2026-04-09 10:51:09.870 +07:00 [INF] Executing endpoint 'ProductApi.Controllers.ProductViewController.Index (ProductApi)'
+2026-04-09 10:51:09.881 +07:00 [INF] Route matched with {action = "Index", controller = "ProductView"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index(System.String, System.Nullable`1[System.Decimal], System.Nullable`1[System.Decimal]) on controller ProductApi.Controllers.ProductViewController (ProductApi).
+2026-04-09 10:51:09.944 +07:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "p"."Id", "p"."CreatedAt", "p"."Description", "p"."Name", "p"."Price"
+FROM "Products" AS "p"
+2026-04-09 10:51:09.970 +07:00 [INF] Executing ViewResult, running view Index.
+2026-04-09 10:51:09.990 +07:00 [INF] Executed ViewResult - view Index executed in 22.6181ms.
+2026-04-09 10:51:09.991 +07:00 [INF] Executed action ProductApi.Controllers.ProductViewController.Index (ProductApi) in 109.3523ms
+2026-04-09 10:51:09.991 +07:00 [INF] Executed endpoint 'ProductApi.Controllers.ProductViewController.Index (ProductApi)'
+2026-04-09 10:51:09.993 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:8080/ProductView/Index - 200 null text/html; charset=utf-8 159.1949ms
+2026-04-09 10:51:16.920 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:8080/AuthView/Logout - null null
+2026-04-09 10:51:16.922 +07:00 [INF] Executing endpoint 'ProductApi.Controllers.AuthViewController.Logout (ProductApi)'
+2026-04-09 10:51:16.925 +07:00 [INF] Route matched with {action = "Logout", controller = "AuthView"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Logout() on controller ProductApi.Controllers.AuthViewController (ProductApi).
+2026-04-09 10:51:16.959 +07:00 [INF] Executing RedirectResult, redirecting to /.
+2026-04-09 10:51:16.959 +07:00 [INF] Executed action ProductApi.Controllers.AuthViewController.Logout (ProductApi) in 33.9608ms
+2026-04-09 10:51:16.959 +07:00 [INF] Executed endpoint 'ProductApi.Controllers.AuthViewController.Logout (ProductApi)'
+2026-04-09 10:51:16.960 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:8080/AuthView/Logout - 302 0 null 40.7344ms
+2026-04-09 10:51:16.962 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:8080/ - null null
+2026-04-09 10:51:16.963 +07:00 [INF] Executing endpoint 'ProductApi.Controllers.AuthViewController.Login (ProductApi)'
+2026-04-09 10:51:16.964 +07:00 [INF] Route matched with {action = "Login", controller = "AuthView"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Login() on controller ProductApi.Controllers.AuthViewController (ProductApi).
+2026-04-09 10:51:16.965 +07:00 [INF] Executing ViewResult, running view Login.
+2026-04-09 10:51:16.984 +07:00 [INF] Executed ViewResult - view Login executed in 19.8535ms.
+2026-04-09 10:51:16.984 +07:00 [INF] Executed action ProductApi.Controllers.AuthViewController.Login (ProductApi) in 20.2434ms
+2026-04-09 10:51:16.984 +07:00 [INF] Executed endpoint 'ProductApi.Controllers.AuthViewController.Login (ProductApi)'
+2026-04-09 10:51:16.984 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:8080/ - 200 null text/html; charset=utf-8 22.5952ms
+2026-04-09 10:51:20.643 +07:00 [INF] Request starting HTTP/1.1 POST http://localhost:8080/AuthView/Login - application/x-www-form-urlencoded 25
+2026-04-09 10:51:20.644 +07:00 [INF] Executing endpoint 'ProductApi.Controllers.AuthViewController.Login (ProductApi)'
+2026-04-09 10:51:20.648 +07:00 [INF] Route matched with {action = "Login", controller = "AuthView"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(System.String, System.String) on controller ProductApi.Controllers.AuthViewController (ProductApi).
+2026-04-09 10:51:20.700 +07:00 [INF] Start processing HTTP request POST http://localhost:8080/api/auth/login
+2026-04-09 10:51:20.701 +07:00 [INF] Sending HTTP request POST http://localhost:8080/api/auth/login
+2026-04-09 10:51:20.713 +07:00 [INF] Request starting HTTP/1.1 POST http://localhost:8080/api/auth/login - application/json; charset=utf-8 35
+2026-04-09 10:51:20.713 +07:00 [INF] Executing endpoint 'ProductApi.Controllers.AuthController.Login (ProductApi)'
+2026-04-09 10:51:20.715 +07:00 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(ProductApi.Models.LoginRequest) on controller ProductApi.Controllers.AuthController (ProductApi).
+2026-04-09 10:51:20.771 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[@__ToLower_0='?' (Size = 3), @__request_Password_1='?' (Size = 3)], CommandType='"Text"', CommandTimeout='30']
+SELECT "u"."Id", "u"."Password", "u"."Username"
+FROM "Users" AS "u"
+WHERE lower("u"."Username") = @__ToLower_0 AND "u"."Password" = @__request_Password_1
+LIMIT 1
+2026-04-09 10:51:20.780 +07:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType0`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-04-09 10:51:20.783 +07:00 [INF] Executed action ProductApi.Controllers.AuthController.Login (ProductApi) in 67.4996ms
+2026-04-09 10:51:20.783 +07:00 [INF] Executed endpoint 'ProductApi.Controllers.AuthController.Login (ProductApi)'
+2026-04-09 10:51:20.783 +07:00 [INF] Request finished HTTP/1.1 POST http://localhost:8080/api/auth/login - 200 null application/json; charset=utf-8 70.4582ms
+2026-04-09 10:51:20.784 +07:00 [INF] Received HTTP response headers after 82.1332ms - 200
+2026-04-09 10:51:20.784 +07:00 [INF] End processing HTTP request after 86.353ms - 200
+2026-04-09 10:51:20.787 +07:00 [INF] Executing RedirectResult, redirecting to /ProductView/Index.
+2026-04-09 10:51:20.787 +07:00 [INF] Executed action ProductApi.Controllers.AuthViewController.Login (ProductApi) in 139.3555ms
+2026-04-09 10:51:20.787 +07:00 [INF] Executed endpoint 'ProductApi.Controllers.AuthViewController.Login (ProductApi)'
+2026-04-09 10:51:20.788 +07:00 [INF] Request finished HTTP/1.1 POST http://localhost:8080/AuthView/Login - 302 0 null 144.7324ms
+2026-04-09 10:51:20.789 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:8080/ProductView/Index - null null
+2026-04-09 10:51:20.790 +07:00 [INF] Executing endpoint 'ProductApi.Controllers.ProductViewController.Index (ProductApi)'
+2026-04-09 10:51:20.790 +07:00 [INF] Route matched with {action = "Index", controller = "ProductView"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index(System.String, System.Nullable`1[System.Decimal], System.Nullable`1[System.Decimal]) on controller ProductApi.Controllers.ProductViewController (ProductApi).
+2026-04-09 10:51:20.791 +07:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "p"."Id", "p"."CreatedAt", "p"."Description", "p"."Name", "p"."Price"
+FROM "Products" AS "p"
+2026-04-09 10:51:20.791 +07:00 [INF] Executing ViewResult, running view Index.
+2026-04-09 10:51:20.791 +07:00 [INF] Executed ViewResult - view Index executed in 0.473ms.
+2026-04-09 10:51:20.791 +07:00 [INF] Executed action ProductApi.Controllers.ProductViewController.Index (ProductApi) in 1.4927ms
+2026-04-09 10:51:20.791 +07:00 [INF] Executed endpoint 'ProductApi.Controllers.ProductViewController.Index (ProductApi)'
+2026-04-09 10:51:20.791 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:8080/ProductView/Index - 200 null text/html; charset=utf-8 2.1297ms
+2026-04-09 10:51:27.242 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:8080/ProductView?search=tes&minPrice=&maxPrice= - null null
+2026-04-09 10:51:27.244 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:8080/ProductView?search=tes&minPrice=&maxPrice= - 404 0 null 2.0722ms
+2026-04-09 10:51:27.246 +07:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:8080/ProductView, Response status code: 404
+2026-04-09 10:51:31.348 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:8080/ProductView?search=tes&minPrice=&maxPrice= - null null
+2026-04-09 10:51:31.349 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:8080/ProductView?search=tes&minPrice=&maxPrice= - 404 0 null 0.629ms
+2026-04-09 10:51:31.349 +07:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:8080/ProductView, Response status code: 404
+2026-04-09 10:52:50.740 +07:00 [INF] Application is shutting down...
+2026-04-09 10:53:04.591 +07:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "type" = 'table' AND "rootpage" IS NOT NULL;
+2026-04-09 10:53:04.661 +07:00 [INF] User profile is available. Using '/Users/amfsdigital/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2026-04-09 10:53:04.686 +07:00 [WRN] The WebRootPath was not found: /Users/amfsdigital/product-assessment/ProductApi/wwwroot. Static files may be unavailable.
+2026-04-09 10:53:04.701 +07:00 [INF] Now listening on: http://0.0.0.0:8080
+2026-04-09 10:53:04.702 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-04-09 10:53:04.702 +07:00 [INF] Hosting environment: Development
+2026-04-09 10:53:04.702 +07:00 [INF] Content root path: /Users/amfsdigital/product-assessment/ProductApi
+2026-04-09 10:53:08.186 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:8080/ProductView?search=tes&minPrice=&maxPrice= - null null
+2026-04-09 10:53:08.226 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:8080/ProductView?search=tes&minPrice=&maxPrice= - 404 0 null 40.7065ms
+2026-04-09 10:53:08.229 +07:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:8080/ProductView, Response status code: 404
+2026-04-09 10:53:12.042 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:8080/ - null null
+2026-04-09 10:53:12.045 +07:00 [INF] Executing endpoint 'ProductApi.Controllers.AuthViewController.Login (ProductApi)'
+2026-04-09 10:53:12.064 +07:00 [INF] Route matched with {action = "Login", controller = "AuthView"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Login() on controller ProductApi.Controllers.AuthViewController (ProductApi).
+2026-04-09 10:53:12.085 +07:00 [INF] Executing ViewResult, running view Login.
+2026-04-09 10:53:12.123 +07:00 [INF] Executed ViewResult - view Login executed in 41.9249ms.
+2026-04-09 10:53:12.124 +07:00 [INF] Executed action ProductApi.Controllers.AuthViewController.Login (ProductApi) in 59.1535ms
+2026-04-09 10:53:12.124 +07:00 [INF] Executed endpoint 'ProductApi.Controllers.AuthViewController.Login (ProductApi)'
+2026-04-09 10:53:12.125 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:8080/ - 200 null text/html; charset=utf-8 84.1492ms
+2026-04-09 10:53:16.867 +07:00 [INF] Request starting HTTP/1.1 POST http://localhost:8080/AuthView/Login - application/x-www-form-urlencoded 25
+2026-04-09 10:53:16.870 +07:00 [INF] Executing endpoint 'ProductApi.Controllers.AuthViewController.Login (ProductApi)'
+2026-04-09 10:53:16.881 +07:00 [INF] Route matched with {action = "Login", controller = "AuthView"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(System.String, System.String) on controller ProductApi.Controllers.AuthViewController (ProductApi).
+2026-04-09 10:53:16.935 +07:00 [INF] Start processing HTTP request POST http://localhost:8080/api/auth/login
+2026-04-09 10:53:16.937 +07:00 [INF] Sending HTTP request POST http://localhost:8080/api/auth/login
+2026-04-09 10:53:16.947 +07:00 [INF] Request starting HTTP/1.1 POST http://localhost:8080/api/auth/login - application/json; charset=utf-8 35
+2026-04-09 10:53:16.947 +07:00 [INF] Executing endpoint 'ProductApi.Controllers.AuthController.Login (ProductApi)'
+2026-04-09 10:53:16.950 +07:00 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(ProductApi.Models.LoginRequest) on controller ProductApi.Controllers.AuthController (ProductApi).
+2026-04-09 10:53:17.044 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[@__ToLower_0='?' (Size = 3), @__request_Password_1='?' (Size = 3)], CommandType='"Text"', CommandTimeout='30']
+SELECT "u"."Id", "u"."Password", "u"."Username"
+FROM "Users" AS "u"
+WHERE lower("u"."Username") = @__ToLower_0 AND "u"."Password" = @__request_Password_1
+LIMIT 1
+2026-04-09 10:53:17.062 +07:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType0`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-04-09 10:53:17.065 +07:00 [INF] Executed action ProductApi.Controllers.AuthController.Login (ProductApi) in 115.3686ms
+2026-04-09 10:53:17.065 +07:00 [INF] Executed endpoint 'ProductApi.Controllers.AuthController.Login (ProductApi)'
+2026-04-09 10:53:17.066 +07:00 [INF] Request finished HTTP/1.1 POST http://localhost:8080/api/auth/login - 200 null application/json; charset=utf-8 119.0212ms
+2026-04-09 10:53:17.067 +07:00 [INF] Received HTTP response headers after 129.2375ms - 200
+2026-04-09 10:53:17.067 +07:00 [INF] End processing HTTP request after 133.0815ms - 200
+2026-04-09 10:53:17.078 +07:00 [INF] Executing RedirectResult, redirecting to /ProductView/Index.
+2026-04-09 10:53:17.079 +07:00 [INF] Executed action ProductApi.Controllers.AuthViewController.Login (ProductApi) in 197.339ms
+2026-04-09 10:53:17.079 +07:00 [INF] Executed endpoint 'ProductApi.Controllers.AuthViewController.Login (ProductApi)'
+2026-04-09 10:53:17.079 +07:00 [INF] Request finished HTTP/1.1 POST http://localhost:8080/AuthView/Login - 302 0 null 212.6418ms
+2026-04-09 10:53:17.081 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:8080/ProductView/Index - null null
+2026-04-09 10:53:17.081 +07:00 [INF] Executing endpoint 'ProductApi.Controllers.ProductViewController.Index (ProductApi)'
+2026-04-09 10:53:17.082 +07:00 [INF] Route matched with {action = "Index", controller = "ProductView"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index(System.String, System.Nullable`1[System.Decimal], System.Nullable`1[System.Decimal]) on controller ProductApi.Controllers.ProductViewController (ProductApi).
+2026-04-09 10:53:17.099 +07:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "p"."Id", "p"."CreatedAt", "p"."Description", "p"."Name", "p"."Price"
+FROM "Products" AS "p"
+2026-04-09 10:53:17.104 +07:00 [INF] Executing ViewResult, running view Index.
+2026-04-09 10:53:17.107 +07:00 [INF] Executed ViewResult - view Index executed in 2.3527ms.
+2026-04-09 10:53:17.107 +07:00 [INF] Executed action ProductApi.Controllers.ProductViewController.Index (ProductApi) in 24.159ms
+2026-04-09 10:53:17.107 +07:00 [INF] Executed endpoint 'ProductApi.Controllers.ProductViewController.Index (ProductApi)'
+2026-04-09 10:53:17.107 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:8080/ProductView/Index - 200 null text/html; charset=utf-8 25.5911ms
+2026-04-09 10:53:19.799 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:8080/ProductView/Index?search=tes&minPrice=&maxPrice= - null null
+2026-04-09 10:53:19.801 +07:00 [INF] Executing endpoint 'ProductApi.Controllers.ProductViewController.Index (ProductApi)'
+2026-04-09 10:53:19.801 +07:00 [INF] Route matched with {action = "Index", controller = "ProductView"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index(System.String, System.Nullable`1[System.Decimal], System.Nullable`1[System.Decimal]) on controller ProductApi.Controllers.ProductViewController (ProductApi).
+2026-04-09 10:53:19.815 +07:00 [INF] Executed DbCommand (0ms) [Parameters=[@__search_0='?' (Size = 3)], CommandType='"Text"', CommandTimeout='30']
+SELECT "p"."Id", "p"."CreatedAt", "p"."Description", "p"."Name", "p"."Price"
+FROM "Products" AS "p"
+WHERE instr("p"."Name", @__search_0) > 0
+2026-04-09 10:53:19.816 +07:00 [INF] Executing ViewResult, running view Index.
+2026-04-09 10:53:19.817 +07:00 [INF] Executed ViewResult - view Index executed in 1.5247ms.
+2026-04-09 10:53:19.818 +07:00 [INF] Executed action ProductApi.Controllers.ProductViewController.Index (ProductApi) in 16.8007ms
+2026-04-09 10:53:19.818 +07:00 [INF] Executed endpoint 'ProductApi.Controllers.ProductViewController.Index (ProductApi)'
+2026-04-09 10:53:19.819 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:8080/ProductView/Index?search=tes&minPrice=&maxPrice= - 200 null text/html; charset=utf-8 19.5847ms
+2026-04-09 10:53:22.911 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:8080/ProductView/Index?search=s&minPrice=&maxPrice= - null null
+2026-04-09 10:53:22.912 +07:00 [INF] Executing endpoint 'ProductApi.Controllers.ProductViewController.Index (ProductApi)'
+2026-04-09 10:53:22.912 +07:00 [INF] Route matched with {action = "Index", controller = "ProductView"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index(System.String, System.Nullable`1[System.Decimal], System.Nullable`1[System.Decimal]) on controller ProductApi.Controllers.ProductViewController (ProductApi).
+2026-04-09 10:53:22.916 +07:00 [INF] Executed DbCommand (0ms) [Parameters=[@__search_0='?' (Size = 1)], CommandType='"Text"', CommandTimeout='30']
+SELECT "p"."Id", "p"."CreatedAt", "p"."Description", "p"."Name", "p"."Price"
+FROM "Products" AS "p"
+WHERE instr("p"."Name", @__search_0) > 0
+2026-04-09 10:53:22.917 +07:00 [INF] Executing ViewResult, running view Index.
+2026-04-09 10:53:22.918 +07:00 [INF] Executed ViewResult - view Index executed in 1.2749ms.
+2026-04-09 10:53:22.918 +07:00 [INF] Executed action ProductApi.Controllers.ProductViewController.Index (ProductApi) in 6.0188ms
+2026-04-09 10:53:22.918 +07:00 [INF] Executed endpoint 'ProductApi.Controllers.ProductViewController.Index (ProductApi)'
+2026-04-09 10:53:22.918 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:8080/ProductView/Index?search=s&minPrice=&maxPrice= - 200 null text/html; charset=utf-8 7.2182ms
+2026-04-09 10:53:26.228 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:8080/ProductView/Create - null null
+2026-04-09 10:53:26.229 +07:00 [INF] Executing endpoint 'ProductApi.Controllers.ProductViewController.Create (ProductApi)'
+2026-04-09 10:53:26.230 +07:00 [INF] Route matched with {action = "Create", controller = "ProductView"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Create() on controller ProductApi.Controllers.ProductViewController (ProductApi).
+2026-04-09 10:53:26.232 +07:00 [INF] Executing ViewResult, running view Create.
+2026-04-09 10:53:26.260 +07:00 [INF] Executed ViewResult - view Create executed in 29.0175ms.
+2026-04-09 10:53:26.260 +07:00 [INF] Executed action ProductApi.Controllers.ProductViewController.Create (ProductApi) in 29.743ms
+2026-04-09 10:53:26.260 +07:00 [INF] Executed endpoint 'ProductApi.Controllers.ProductViewController.Create (ProductApi)'
+2026-04-09 10:53:26.261 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:8080/ProductView/Create - 200 null text/html; charset=utf-8 32.1278ms
+2026-04-09 10:53:31.885 +07:00 [INF] Request starting HTTP/1.1 POST http://localhost:8080/ProductView/Create - application/x-www-form-urlencoded 32
+2026-04-09 10:53:31.886 +07:00 [INF] Executing endpoint 'ProductApi.Controllers.ProductViewController.Create (ProductApi)'
+2026-04-09 10:53:31.892 +07:00 [INF] Route matched with {action = "Create", controller = "ProductView"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Create(ProductApi.Models.Product) on controller ProductApi.Controllers.ProductViewController (ProductApi).
+2026-04-09 10:53:31.946 +07:00 [INF] Executed DbCommand (0ms) [Parameters=[@p0='?' (DbType = DateTime), @p1='?' (Size = 3), @p2='?' (Size = 3), @p3='?' (DbType = Decimal)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "Products" ("CreatedAt", "Description", "Name", "Price")
+VALUES (@p0, @p1, @p2, @p3)
+RETURNING "Id";
+2026-04-09 10:53:31.953 +07:00 [INF] Executing RedirectResult, redirecting to /ProductView/Index.
+2026-04-09 10:53:31.953 +07:00 [INF] Executed action ProductApi.Controllers.ProductViewController.Create (ProductApi) in 61.4372ms
+2026-04-09 10:53:31.953 +07:00 [INF] Executed endpoint 'ProductApi.Controllers.ProductViewController.Create (ProductApi)'
+2026-04-09 10:53:31.953 +07:00 [INF] Request finished HTTP/1.1 POST http://localhost:8080/ProductView/Create - 302 0 null 68.1264ms
+2026-04-09 10:53:31.955 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:8080/ProductView/Index - null null
+2026-04-09 10:53:31.955 +07:00 [INF] Executing endpoint 'ProductApi.Controllers.ProductViewController.Index (ProductApi)'
+2026-04-09 10:53:31.955 +07:00 [INF] Route matched with {action = "Index", controller = "ProductView"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index(System.String, System.Nullable`1[System.Decimal], System.Nullable`1[System.Decimal]) on controller ProductApi.Controllers.ProductViewController (ProductApi).
+2026-04-09 10:53:31.955 +07:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "p"."Id", "p"."CreatedAt", "p"."Description", "p"."Name", "p"."Price"
+FROM "Products" AS "p"
+2026-04-09 10:53:31.956 +07:00 [INF] Executing ViewResult, running view Index.
+2026-04-09 10:53:31.956 +07:00 [INF] Executed ViewResult - view Index executed in 0.1806ms.
+2026-04-09 10:53:31.956 +07:00 [INF] Executed action ProductApi.Controllers.ProductViewController.Index (ProductApi) in 0.8157ms
+2026-04-09 10:53:31.956 +07:00 [INF] Executed endpoint 'ProductApi.Controllers.ProductViewController.Index (ProductApi)'
+2026-04-09 10:53:31.956 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:8080/ProductView/Index - 200 null text/html; charset=utf-8 1.1512ms
+2026-04-09 10:53:35.105 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:8080/ProductView/Index?search=tes&minPrice=&maxPrice= - null null
+2026-04-09 10:53:35.106 +07:00 [INF] Executing endpoint 'ProductApi.Controllers.ProductViewController.Index (ProductApi)'
+2026-04-09 10:53:35.106 +07:00 [INF] Route matched with {action = "Index", controller = "ProductView"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index(System.String, System.Nullable`1[System.Decimal], System.Nullable`1[System.Decimal]) on controller ProductApi.Controllers.ProductViewController (ProductApi).
+2026-04-09 10:53:35.108 +07:00 [INF] Executed DbCommand (0ms) [Parameters=[@__search_0='?' (Size = 3)], CommandType='"Text"', CommandTimeout='30']
+SELECT "p"."Id", "p"."CreatedAt", "p"."Description", "p"."Name", "p"."Price"
+FROM "Products" AS "p"
+WHERE instr("p"."Name", @__search_0) > 0
+2026-04-09 10:53:35.108 +07:00 [INF] Executing ViewResult, running view Index.
+2026-04-09 10:53:35.109 +07:00 [INF] Executed ViewResult - view Index executed in 0.4819ms.
+2026-04-09 10:53:35.109 +07:00 [INF] Executed action ProductApi.Controllers.ProductViewController.Index (ProductApi) in 3.0409ms
+2026-04-09 10:53:35.109 +07:00 [INF] Executed endpoint 'ProductApi.Controllers.ProductViewController.Index (ProductApi)'
+2026-04-09 10:53:35.109 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:8080/ProductView/Index?search=tes&minPrice=&maxPrice= - 200 null text/html; charset=utf-8 4.5362ms
+2026-04-09 10:53:37.389 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:8080/ProductView/Index?search=abc&minPrice=&maxPrice= - null null
+2026-04-09 10:53:37.389 +07:00 [INF] Executing endpoint 'ProductApi.Controllers.ProductViewController.Index (ProductApi)'
+2026-04-09 10:53:37.389 +07:00 [INF] Route matched with {action = "Index", controller = "ProductView"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index(System.String, System.Nullable`1[System.Decimal], System.Nullable`1[System.Decimal]) on controller ProductApi.Controllers.ProductViewController (ProductApi).
+2026-04-09 10:53:37.391 +07:00 [INF] Executed DbCommand (0ms) [Parameters=[@__search_0='?' (Size = 3)], CommandType='"Text"', CommandTimeout='30']
+SELECT "p"."Id", "p"."CreatedAt", "p"."Description", "p"."Name", "p"."Price"
+FROM "Products" AS "p"
+WHERE instr("p"."Name", @__search_0) > 0
+2026-04-09 10:53:37.392 +07:00 [INF] Executing ViewResult, running view Index.
+2026-04-09 10:53:37.392 +07:00 [INF] Executed ViewResult - view Index executed in 0.5418ms.
+2026-04-09 10:53:37.392 +07:00 [INF] Executed action ProductApi.Controllers.ProductViewController.Index (ProductApi) in 2.892ms
+2026-04-09 10:53:37.393 +07:00 [INF] Executed endpoint 'ProductApi.Controllers.ProductViewController.Index (ProductApi)'
+2026-04-09 10:53:37.393 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:8080/ProductView/Index?search=abc&minPrice=&maxPrice= - 200 null text/html; charset=utf-8 4.0043ms
+2026-04-09 10:53:41.674 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:8080/ProductView/Index?search=&minPrice=&maxPrice= - null null
+2026-04-09 10:53:41.674 +07:00 [INF] Executing endpoint 'ProductApi.Controllers.ProductViewController.Index (ProductApi)'
+2026-04-09 10:53:41.675 +07:00 [INF] Route matched with {action = "Index", controller = "ProductView"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index(System.String, System.Nullable`1[System.Decimal], System.Nullable`1[System.Decimal]) on controller ProductApi.Controllers.ProductViewController (ProductApi).
+2026-04-09 10:53:41.676 +07:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "p"."Id", "p"."CreatedAt", "p"."Description", "p"."Name", "p"."Price"
+FROM "Products" AS "p"
+2026-04-09 10:53:41.676 +07:00 [INF] Executing ViewResult, running view Index.
+2026-04-09 10:53:41.677 +07:00 [INF] Executed ViewResult - view Index executed in 0.4984ms.
+2026-04-09 10:53:41.677 +07:00 [INF] Executed action ProductApi.Controllers.ProductViewController.Index (ProductApi) in 2.2901ms
+2026-04-09 10:53:41.677 +07:00 [INF] Executed endpoint 'ProductApi.Controllers.ProductViewController.Index (ProductApi)'
+2026-04-09 10:53:41.677 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:8080/ProductView/Index?search=&minPrice=&maxPrice= - 200 null text/html; charset=utf-8 3.4591ms
+2026-04-09 10:53:50.911 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:8080/ProductView/Index?search=&minPrice=123&maxPrice= - null null
+2026-04-09 10:53:50.911 +07:00 [INF] Executing endpoint 'ProductApi.Controllers.ProductViewController.Index (ProductApi)'
+2026-04-09 10:53:50.912 +07:00 [INF] Route matched with {action = "Index", controller = "ProductView"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index(System.String, System.Nullable`1[System.Decimal], System.Nullable`1[System.Decimal]) on controller ProductApi.Controllers.ProductViewController (ProductApi).
+2026-04-09 10:53:50.919 +07:00 [INF] Executed DbCommand (2ms) [Parameters=[@__minPrice_Value_0='?' (DbType = Decimal)], CommandType='"Text"', CommandTimeout='30']
+SELECT "p"."Id", "p"."CreatedAt", "p"."Description", "p"."Name", "p"."Price"
+FROM "Products" AS "p"
+WHERE ef_compare("p"."Price", @__minPrice_Value_0) >= 0
+2026-04-09 10:53:50.920 +07:00 [INF] Executing ViewResult, running view Index.
+2026-04-09 10:53:50.920 +07:00 [INF] Executed ViewResult - view Index executed in 0.7525ms.
+2026-04-09 10:53:50.921 +07:00 [INF] Executed action ProductApi.Controllers.ProductViewController.Index (ProductApi) in 8.9402ms
+2026-04-09 10:53:50.921 +07:00 [INF] Executed endpoint 'ProductApi.Controllers.ProductViewController.Index (ProductApi)'
+2026-04-09 10:53:50.921 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:8080/ProductView/Index?search=&minPrice=123&maxPrice= - 200 null text/html; charset=utf-8 10.1878ms
+2026-04-09 10:53:55.166 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:8080/ProductView/Index?search=&minPrice=&maxPrice= - null null
+2026-04-09 10:53:55.166 +07:00 [INF] Executing endpoint 'ProductApi.Controllers.ProductViewController.Index (ProductApi)'
+2026-04-09 10:53:55.166 +07:00 [INF] Route matched with {action = "Index", controller = "ProductView"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index(System.String, System.Nullable`1[System.Decimal], System.Nullable`1[System.Decimal]) on controller ProductApi.Controllers.ProductViewController (ProductApi).
+2026-04-09 10:53:55.168 +07:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "p"."Id", "p"."CreatedAt", "p"."Description", "p"."Name", "p"."Price"
+FROM "Products" AS "p"
+2026-04-09 10:53:55.168 +07:00 [INF] Executing ViewResult, running view Index.
+2026-04-09 10:53:55.169 +07:00 [INF] Executed ViewResult - view Index executed in 0.6845ms.
+2026-04-09 10:53:55.169 +07:00 [INF] Executed action ProductApi.Controllers.ProductViewController.Index (ProductApi) in 2.6222ms
+2026-04-09 10:53:55.169 +07:00 [INF] Executed endpoint 'ProductApi.Controllers.ProductViewController.Index (ProductApi)'
+2026-04-09 10:53:55.169 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:8080/ProductView/Index?search=&minPrice=&maxPrice= - 200 null text/html; charset=utf-8 3.5347ms
+2026-04-09 10:53:59.749 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:8080/ProductView/Index?search=&minPrice=124&maxPrice= - null null
+2026-04-09 10:53:59.749 +07:00 [INF] Executing endpoint 'ProductApi.Controllers.ProductViewController.Index (ProductApi)'
+2026-04-09 10:53:59.749 +07:00 [INF] Route matched with {action = "Index", controller = "ProductView"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index(System.String, System.Nullable`1[System.Decimal], System.Nullable`1[System.Decimal]) on controller ProductApi.Controllers.ProductViewController (ProductApi).
+2026-04-09 10:53:59.752 +07:00 [INF] Executed DbCommand (0ms) [Parameters=[@__minPrice_Value_0='?' (DbType = Decimal)], CommandType='"Text"', CommandTimeout='30']
+SELECT "p"."Id", "p"."CreatedAt", "p"."Description", "p"."Name", "p"."Price"
+FROM "Products" AS "p"
+WHERE ef_compare("p"."Price", @__minPrice_Value_0) >= 0
+2026-04-09 10:53:59.752 +07:00 [INF] Executing ViewResult, running view Index.
+2026-04-09 10:53:59.753 +07:00 [INF] Executed ViewResult - view Index executed in 0.6536ms.
+2026-04-09 10:53:59.753 +07:00 [INF] Executed action ProductApi.Controllers.ProductViewController.Index (ProductApi) in 3.5577ms
+2026-04-09 10:53:59.753 +07:00 [INF] Executed endpoint 'ProductApi.Controllers.ProductViewController.Index (ProductApi)'
+2026-04-09 10:53:59.753 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:8080/ProductView/Index?search=&minPrice=124&maxPrice= - 200 null text/html; charset=utf-8 4.7719ms
+2026-04-09 10:54:02.823 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:8080/ProductView/Index?search=&minPrice=124&maxPrice= - null null
+2026-04-09 10:54:02.824 +07:00 [INF] Executing endpoint 'ProductApi.Controllers.ProductViewController.Index (ProductApi)'
+2026-04-09 10:54:02.824 +07:00 [INF] Route matched with {action = "Index", controller = "ProductView"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index(System.String, System.Nullable`1[System.Decimal], System.Nullable`1[System.Decimal]) on controller ProductApi.Controllers.ProductViewController (ProductApi).
+2026-04-09 10:54:02.826 +07:00 [INF] Executed DbCommand (0ms) [Parameters=[@__minPrice_Value_0='?' (DbType = Decimal)], CommandType='"Text"', CommandTimeout='30']
+SELECT "p"."Id", "p"."CreatedAt", "p"."Description", "p"."Name", "p"."Price"
+FROM "Products" AS "p"
+WHERE ef_compare("p"."Price", @__minPrice_Value_0) >= 0
+2026-04-09 10:54:02.826 +07:00 [INF] Executing ViewResult, running view Index.
+2026-04-09 10:54:02.827 +07:00 [INF] Executed ViewResult - view Index executed in 0.5333ms.
+2026-04-09 10:54:02.827 +07:00 [INF] Executed action ProductApi.Controllers.ProductViewController.Index (ProductApi) in 3.0966ms
+2026-04-09 10:54:02.827 +07:00 [INF] Executed endpoint 'ProductApi.Controllers.ProductViewController.Index (ProductApi)'
+2026-04-09 10:54:02.828 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:8080/ProductView/Index?search=&minPrice=124&maxPrice= - 200 null text/html; charset=utf-8 4.6342ms
+2026-04-09 10:54:07.154 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:8080/ProductView/Index?search=&minPrice=&maxPrice= - null null
+2026-04-09 10:54:07.155 +07:00 [INF] Executing endpoint 'ProductApi.Controllers.ProductViewController.Index (ProductApi)'
+2026-04-09 10:54:07.155 +07:00 [INF] Route matched with {action = "Index", controller = "ProductView"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index(System.String, System.Nullable`1[System.Decimal], System.Nullable`1[System.Decimal]) on controller ProductApi.Controllers.ProductViewController (ProductApi).
+2026-04-09 10:54:07.157 +07:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "p"."Id", "p"."CreatedAt", "p"."Description", "p"."Name", "p"."Price"
+FROM "Products" AS "p"
+2026-04-09 10:54:07.157 +07:00 [INF] Executing ViewResult, running view Index.
+2026-04-09 10:54:07.158 +07:00 [INF] Executed ViewResult - view Index executed in 0.5824ms.
+2026-04-09 10:54:07.158 +07:00 [INF] Executed action ProductApi.Controllers.ProductViewController.Index (ProductApi) in 2.9117ms
+2026-04-09 10:54:07.158 +07:00 [INF] Executed endpoint 'ProductApi.Controllers.ProductViewController.Index (ProductApi)'
+2026-04-09 10:54:07.158 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:8080/ProductView/Index?search=&minPrice=&maxPrice= - 200 null text/html; charset=utf-8 4.0704ms
+2026-04-09 10:54:14.761 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:8080/ProductView/Index?search=&minPrice=1&maxPrice= - null null
+2026-04-09 10:54:14.762 +07:00 [INF] Executing endpoint 'ProductApi.Controllers.ProductViewController.Index (ProductApi)'
+2026-04-09 10:54:14.762 +07:00 [INF] Route matched with {action = "Index", controller = "ProductView"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index(System.String, System.Nullable`1[System.Decimal], System.Nullable`1[System.Decimal]) on controller ProductApi.Controllers.ProductViewController (ProductApi).
+2026-04-09 10:54:14.764 +07:00 [INF] Executed DbCommand (0ms) [Parameters=[@__minPrice_Value_0='?' (DbType = Decimal)], CommandType='"Text"', CommandTimeout='30']
+SELECT "p"."Id", "p"."CreatedAt", "p"."Description", "p"."Name", "p"."Price"
+FROM "Products" AS "p"
+WHERE ef_compare("p"."Price", @__minPrice_Value_0) >= 0
+2026-04-09 10:54:14.764 +07:00 [INF] Executing ViewResult, running view Index.
+2026-04-09 10:54:14.765 +07:00 [INF] Executed ViewResult - view Index executed in 0.4472ms.
+2026-04-09 10:54:14.765 +07:00 [INF] Executed action ProductApi.Controllers.ProductViewController.Index (ProductApi) in 3.0695ms
+2026-04-09 10:54:14.765 +07:00 [INF] Executed endpoint 'ProductApi.Controllers.ProductViewController.Index (ProductApi)'
+2026-04-09 10:54:14.765 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:8080/ProductView/Index?search=&minPrice=1&maxPrice= - 200 null text/html; charset=utf-8 4.294ms
+2026-04-09 10:54:15.944 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:8080/ProductView/Index?search=&minPrice=1&maxPrice= - null null
+2026-04-09 10:54:15.944 +07:00 [INF] Executing endpoint 'ProductApi.Controllers.ProductViewController.Index (ProductApi)'
+2026-04-09 10:54:15.944 +07:00 [INF] Route matched with {action = "Index", controller = "ProductView"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index(System.String, System.Nullable`1[System.Decimal], System.Nullable`1[System.Decimal]) on controller ProductApi.Controllers.ProductViewController (ProductApi).
+2026-04-09 10:54:15.946 +07:00 [INF] Executed DbCommand (0ms) [Parameters=[@__minPrice_Value_0='?' (DbType = Decimal)], CommandType='"Text"', CommandTimeout='30']
+SELECT "p"."Id", "p"."CreatedAt", "p"."Description", "p"."Name", "p"."Price"
+FROM "Products" AS "p"
+WHERE ef_compare("p"."Price", @__minPrice_Value_0) >= 0
+2026-04-09 10:54:15.947 +07:00 [INF] Executing ViewResult, running view Index.
+2026-04-09 10:54:15.947 +07:00 [INF] Executed ViewResult - view Index executed in 0.4874ms.
+2026-04-09 10:54:15.947 +07:00 [INF] Executed action ProductApi.Controllers.ProductViewController.Index (ProductApi) in 2.6625ms
+2026-04-09 10:54:15.947 +07:00 [INF] Executed endpoint 'ProductApi.Controllers.ProductViewController.Index (ProductApi)'
+2026-04-09 10:54:15.947 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:8080/ProductView/Index?search=&minPrice=1&maxPrice= - 200 null text/html; charset=utf-8 3.6081ms
+2026-04-09 10:54:19.948 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:8080/ProductView/Index?search=&minPrice=&maxPrice=1 - null null
+2026-04-09 10:54:19.949 +07:00 [INF] Executing endpoint 'ProductApi.Controllers.ProductViewController.Index (ProductApi)'
+2026-04-09 10:54:19.949 +07:00 [INF] Route matched with {action = "Index", controller = "ProductView"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index(System.String, System.Nullable`1[System.Decimal], System.Nullable`1[System.Decimal]) on controller ProductApi.Controllers.ProductViewController (ProductApi).
+2026-04-09 10:54:19.954 +07:00 [INF] Executed DbCommand (0ms) [Parameters=[@__maxPrice_Value_0='?' (DbType = Decimal)], CommandType='"Text"', CommandTimeout='30']
+SELECT "p"."Id", "p"."CreatedAt", "p"."Description", "p"."Name", "p"."Price"
+FROM "Products" AS "p"
+WHERE ef_compare("p"."Price", @__maxPrice_Value_0) <= 0
+2026-04-09 10:54:19.954 +07:00 [INF] Executing ViewResult, running view Index.
+2026-04-09 10:54:19.955 +07:00 [INF] Executed ViewResult - view Index executed in 0.5963ms.
+2026-04-09 10:54:19.955 +07:00 [INF] Executed action ProductApi.Controllers.ProductViewController.Index (ProductApi) in 6.1572ms
+2026-04-09 10:54:19.955 +07:00 [INF] Executed endpoint 'ProductApi.Controllers.ProductViewController.Index (ProductApi)'
+2026-04-09 10:54:19.955 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:8080/ProductView/Index?search=&minPrice=&maxPrice=1 - 200 null text/html; charset=utf-8 7.0442ms
+2026-04-09 10:57:15.919 +07:00 [INF] Application is shutting down...

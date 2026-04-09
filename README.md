@@ -11,6 +11,14 @@ Simple ASP.NET Core Web API for Product Management with JWT Authentication, Logg
 - Logging via `ILogger`
 - Unit Tests with xUnit
 
+## Tech Stack
+- ASP.NET Core 8
+- Entity Framework Core
+- SQLite
+- JWT Authentication
+- Razor View (MVC)
+- Railway
+
 ---
 
 ## Run Locally
@@ -33,3 +41,6 @@ Simple ASP.NET Core Web API for Product Management with JWT Authentication, Logg
 4. dotnet run --project ProductApi
 
 5. http://localhost:{port}
+
+## Live Demo
+https://productapitest-production.up.railway.app/

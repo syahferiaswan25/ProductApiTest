@@ -34,7 +34,8 @@ public class AuthViewController : Controller
         );
 
         //BaseAddress + relative URL
-        _httpClient.BaseAddress = new Uri($"https://{Request.Host}");
+        var scheme = Request.Scheme;
+        _httpClient.BaseAddress = new Uri($"{scheme}://{Request.Host}");
         var response = await _httpClient.PostAsync("/api/auth/login", content);
 
         if (!response.IsSuccessStatusCode)
@@ -87,7 +88,8 @@ public class AuthViewController : Controller
         );
 
         //BaseAddress + relative URL
-        _httpClient.BaseAddress = new Uri($"https://{Request.Host}");
+        var scheme = Request.Scheme;
+        _httpClient.BaseAddress = new Uri($"{scheme}://{Request.Host}");
         var response = await _httpClient.PostAsync("/api/auth/register", content); 
 
         if (!response.IsSuccessStatusCode)

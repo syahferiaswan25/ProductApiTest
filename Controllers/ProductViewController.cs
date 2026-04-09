@@ -19,13 +19,31 @@ public class ProductViewController : Controller
         return Request.Cookies["jwt"] != null;
     }
 
-    // List Product
-    public async Task<IActionResult> Index()
+    // LIST + SEARCH + FILTER (FINAL)
+    public async Task<IActionResult> Index(string search, decimal? minPrice, decimal? maxPrice)
     {
         if (!IsLoggedIn())
             return RedirectToAction("Login", "AuthView");
 
-        var products = await _context.Products.ToListAsync();
+        var query = _context.Products.AsQueryable();
+
+        if (!string.IsNullOrEmpty(search))
+        {
+            query = query.Where(p => p.Name != null && p.Name.Contains(search));
+        }
+
+        if (minPrice.HasValue)
+        {
+            query = query.Where(p => p.Price >= minPrice.Value);
+        }
+
+        if (maxPrice.HasValue)
+        {
+            query = query.Where(p => p.Price <= maxPrice.Value);
+        }
+
+        var products = await query.ToListAsync();
+
         return View(products);
     }
 
@@ -89,7 +107,7 @@ public class ProductViewController : Controller
         return View(product);
     }
 
-    // Delete
+    // DELETE
     public async Task<IActionResult> Delete(int id)
     {
         if (!IsLoggedIn())

@@ -12,6 +12,30 @@
     </a>
 </div>
 
+<form method="get" action="/ProductView/Index" class="mb-3">
+    <input type="text"
+           name="search"
+           value="@Context.Request.Query["search"]"
+           placeholder="Search name"
+           class="form-control mb-2" />
+
+    <input type="number"
+           name="minPrice"
+           value="@Context.Request.Query["minPrice"]"
+           placeholder="Min Price"
+           class="form-control mb-2" />
+
+    <input type="number"
+           name="maxPrice"
+           value="@Context.Request.Query["maxPrice"]"
+           placeholder="Max Price"
+           class="form-control mb-2" />
+
+    <button type="submit" class="btn btn-primary">
+        Search
+    </button>
+</form>
+
 <table class="table table-bordered">
     <thead>
         <tr>
