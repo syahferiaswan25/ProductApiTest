@@ -23,8 +23,11 @@ public class AuthController : ControllerBase
     }
 
     [HttpPost("register")]
-public async Task<IActionResult> Register([FromBody] RegisterRequest request)
+public async Task<IActionResult> Register(RegisterRequest request)
 {
+    if (!ModelState.IsValid)
+        return BadRequest(ModelState);
+
     var user = new User
     {
         Username = request.Username,
@@ -35,7 +38,7 @@ public async Task<IActionResult> Register([FromBody] RegisterRequest request)
     await _context.SaveChangesAsync();
 
     return Ok(user);
-}  
+}
 [HttpPost("login")]
 public async Task<IActionResult> Login([FromBody] LoginRequest request)
 {

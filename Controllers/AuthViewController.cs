@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using System.Text;
 using System.Text.Json;
+using ProductApi.Models;
 
 namespace ProductApi.Controllers;
 
@@ -68,39 +69,35 @@ public class AuthViewController : Controller
     // GET: Register
     public IActionResult Register()
     {
-        return View();
+    return View(new RegisterRequest());
     }
 
     // POST: Register
     [HttpPost]
-    public async Task<IActionResult> Register(string username, string password)
+public async Task<IActionResult> Register(RegisterRequest request){
+    if (!ModelState.IsValid)
+        return View(request);
+
+    var content = new StringContent(
+        JsonSerializer.Serialize(request),
+        Encoding.UTF8,
+        "application/json"
+    );
+
+    var scheme = Request.Scheme;
+    _httpClient.BaseAddress = new Uri($"{scheme}://{Request.Host}");
+
+    var response = await _httpClient.PostAsync("/api/auth/register", content);
+
+    if (!response.IsSuccessStatusCode)
     {
-        var request = new
-        {
-            Username = username,
-            Password = password
-        };
-
-        var content = new StringContent(
-            JsonSerializer.Serialize(request),
-            Encoding.UTF8,
-            "application/json"
-        );
-
-        //BaseAddress + relative URL
-        var scheme = Request.Scheme;
-        _httpClient.BaseAddress = new Uri($"{scheme}://{Request.Host}");
-        var response = await _httpClient.PostAsync("/api/auth/register", content); 
-
-        if (!response.IsSuccessStatusCode)
-        {
-            var error = await response.Content.ReadAsStringAsync();
-            ViewBag.Error = $"Register failed: {error}";
-            return View();
-        }
-
-        return RedirectToAction("Login");
+        var error = await response.Content.ReadAsStringAsync();
+        ViewBag.Error = $"Register failed: {error}";
+        return View(request);
     }
+
+    return RedirectToAction("Login");
+}
 
     public IActionResult Logout()
     {
