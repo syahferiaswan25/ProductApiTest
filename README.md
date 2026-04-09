@@ -23,12 +23,6 @@ Simple ASP.NET Core Web API for Product Management with JWT Authentication, Logg
 
 ## Run Locally
 
-### Requirements
-
-- .NET 8 SDK ([download](https://dotnet.microsoft.com/en-us/download/dotnet/8.0))
-- SQLite (optional)
-- VSCode / Visual Studio / terminal
-
 ### Steps
 
 1. git clone <https://github.com/syahferiaswan25/ProductApiTest.git>
