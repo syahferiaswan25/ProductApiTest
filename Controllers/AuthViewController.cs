@@ -35,8 +35,8 @@ public class AuthViewController : Controller
         );
 
         //BaseAddress + relative URL
-        var scheme = Request.Scheme;
-        _httpClient.BaseAddress = new Uri($"{scheme}://{Request.Host}");
+        var scheme = Request.Headers["X-Forwarded-Proto"].FirstOrDefault() ?? Request.Scheme;
+_httpClient.BaseAddress = new Uri($"{scheme}://{Request.Host}");
         var response = await _httpClient.PostAsync("/api/auth/login", content);
 
         if (!response.IsSuccessStatusCode)
@@ -84,8 +84,8 @@ public async Task<IActionResult> Register(RegisterRequest request){
         "application/json"
     );
 
-    var scheme = Request.Scheme;
-    _httpClient.BaseAddress = new Uri($"{scheme}://{Request.Host}");
+    var scheme = Request.Headers["X-Forwarded-Proto"].FirstOrDefault() ?? Request.Scheme;
+_httpClient.BaseAddress = new Uri($"{scheme}://{Request.Host}");
 
     var response = await _httpClient.PostAsync("/api/auth/register", content);
 
