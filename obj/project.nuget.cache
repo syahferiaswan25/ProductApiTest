@@ -1,10 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "IoXweWPIk3x1xST792RJ4fmWr6bi1p0cEfOHUEhCIXxWoVoWHAb2hYNLIfhB8TAjOjGW2hFeUo6f9wZMe/eSJQ==",
+  "dgSpecHash": "Ipy4JmkoPdotBKttb3Yj6EINj6Tz0IdNZESUXSnwPf6nzEnRcV8JNL9tsn3SZj31WWm+uZg7Jq32h7MUFa3ltA==",
   "success": true,
   "projectFilePath": "/Users/amfsdigital/product-assessment/ProductApi/ProductApi.csproj",
   "expectedPackageFiles": [
     "/Users/amfsdigital/.nuget/packages/castle.core/5.1.1/castle.core.5.1.1.nupkg.sha512",
+    "/Users/amfsdigital/.nuget/packages/fluentassertions/8.9.0/fluentassertions.8.9.0.nupkg.sha512",
     "/Users/amfsdigital/.nuget/packages/humanizer.core/2.14.1/humanizer.core.2.14.1.nupkg.sha512",
     "/Users/amfsdigital/.nuget/packages/microsoft.aspnetcore.authentication.jwtbearer/8.0.7/microsoft.aspnetcore.authentication.jwtbearer.8.0.7.nupkg.sha512",
     "/Users/amfsdigital/.nuget/packages/microsoft.bcl.asyncinterfaces/6.0.0/microsoft.bcl.asyncinterfaces.6.0.0.nupkg.sha512",

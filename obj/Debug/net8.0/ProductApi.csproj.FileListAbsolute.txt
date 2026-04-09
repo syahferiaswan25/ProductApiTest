@@ -244,3 +244,4 @@
 /Users/amfsdigital/product-assessment/ProductApi/obj/Debug/net8.0/ProductApi.pdb
 /Users/amfsdigital/product-assessment/ProductApi/obj/Debug/net8.0/ProductApi.genruntimeconfig.cache
 /Users/amfsdigital/product-assessment/ProductApi/obj/Debug/net8.0/ref/ProductApi.dll
+/Users/amfsdigital/product-assessment/ProductApi/bin/Debug/net8.0/FluentAssertions.dll
